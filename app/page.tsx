@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 type View = "home" | "events" | "findos" | "praktisk" | "booking";
 
@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#162F24] text-[#F5F1E8]">
       {/* FAST VANDMÆRKE */}
-      <div className="pointer-events-none fixed inset-x-0 bottom-6 top-[126px] z-0 flex items-center justify-center overflow-hidden md:top-[142px]">
+      <div className="pointer-events-none fixed inset-x-0 bottom-6 top-[110px] z-0 flex items-center justify-center overflow-hidden md:top-[126px]">
         <img
           src="/logo-watermark-transparent.png"
           alt=""
@@ -102,7 +102,7 @@ export default function Home() {
 
         <button
           onClick={() => goToView("booking")}
-          className="rounded-full bg-[#214A34]/90 px-5 py-3 text-xs font-semibold text-[#F5F1E8] shadow-lg shadow-black/20 transition hover:bg-[#2B5B41] sm:px-6 md:px-7 md:py-4 md:text-sm"
+          className="rounded-full bg-[#214A34]/90 px-5 py-3 text-xs font-semibold text-[#F5F1E8] shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-0.5 hover:bg-[#2B5B41] sm:px-6 md:px-7 md:py-4 md:text-sm"
           type="button"
         >
           Book bord
@@ -114,6 +114,7 @@ export default function Home() {
         <HomePage
           onOpenMap={() => setIsMapOpen(true)}
           onOpenFindUs={() => goToView("findos")}
+          onOpenBooking={() => goToView("booking")}
         />
       ) : view === "events" ? (
         <EventsPage />
@@ -134,14 +135,20 @@ export default function Home() {
 function HomePage({
   onOpenMap,
   onOpenFindUs,
+  onOpenBooking,
 }: {
   onOpenMap: () => void;
   onOpenFindUs: () => void;
+  onOpenBooking: () => void;
 }) {
   return (
-    <section className="relative z-10 px-6 pt-24 text-center md:pt-28">
+    <section className="relative z-10 px-5 pb-24 pt-24 text-center sm:px-6 md:pt-28">
       {/* HERO */}
-      <div className="mx-auto flex min-h-screen max-w-6xl -translate-y-8 flex-col items-center justify-center">
+      <div className="mx-auto flex min-h-[70vh] max-w-6xl flex-col items-center justify-center pb-10 pt-16 sm:min-h-[72vh] md:pb-14">
+        <p className="mb-7 text-xs uppercase tracking-[0.4em] text-[#A7BCA8] sm:text-sm">
+          Spil • Smil • Sjov
+        </p>
+
         <h1 className="font-serif text-4xl leading-[1.05] tracking-tight sm:text-5xl md:text-7xl">
           Mere nærvær,
           <br />
@@ -149,25 +156,34 @@ function HomePage({
           <br />
           Offline hygge starter her!
         </h1>
+
+        <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-[#D6D1C7] sm:text-lg md:text-xl">
+          En varm og afslappet boardgame lounge midt i Kongens Lyngby — skabt
+          til gode spil, kaffe og tid sammen.
+        </p>
+
+        <button
+          onClick={onOpenBooking}
+          type="button"
+          className="mt-9 rounded-full bg-[#F5F1E8] px-8 py-4 text-sm font-semibold text-[#183226] shadow-xl shadow-black/20 transition duration-300 hover:-translate-y-0.5 hover:bg-white"
+        >
+          Book bord
+        </button>
       </div>
 
-      {/* FORDELE */}
-      <div className="mx-auto grid max-w-6xl gap-5 pb-16 md:grid-cols-3">
-        <div className="rounded-2xl bg-[#F5F1E8] px-8 py-8 text-center text-[#314B39] shadow-xl shadow-black/20">
-          <div className="mb-4 text-4xl">♕</div>
+      {/* TRE HVIDE KORT */}
+      <div className="mx-auto grid max-w-6xl gap-5 pb-8 md:grid-cols-3">
+        <FeatureCard
+          icon={<span className="text-4xl">♕</span>}
+          title="+300 spil"
+          text="Brætspil og kortspil til alle aldre og niveauer."
+        />
 
-          <h3 className="mb-3 text-xl font-medium">+300 spil</h3>
-
-          <p className="leading-7 text-[#314B39]/85">
-            Brætspil og kortspil til alle aldre og niveauer.
-          </p>
-        </div>
-
-        <div className="rounded-2xl bg-[#F5F1E8] px-8 py-8 text-center text-[#314B39] shadow-xl shadow-black/20">
-          <div className="mb-4 flex justify-center">
+        <FeatureCard
+          icon={
             <svg
-              width="38"
-              height="38"
+              width="40"
+              height="40"
               viewBox="0 0 64 64"
               fill="none"
               aria-hidden="true"
@@ -203,17 +219,13 @@ function HomePage({
 
               <circle cx="32" cy="32" r="3.5" fill="currentColor" />
             </svg>
-          </div>
+          }
+          title="Til alle"
+          text="Familie, venner, kollegaer – alle er velkomne."
+        />
 
-          <h3 className="mb-3 text-xl font-medium">Til alle</h3>
-
-          <p className="leading-7 text-[#314B39]/85">
-            Familie, venner, kollegaer – alle er velkomne.
-          </p>
-        </div>
-
-        <div className="rounded-2xl bg-[#F5F1E8] px-8 py-8 text-center text-[#314B39] shadow-xl shadow-black/20">
-          <div className="mb-4 flex justify-center">
+        <FeatureCard
+          icon={
             <svg
               width="48"
               height="48"
@@ -264,57 +276,68 @@ function HomePage({
                 strokeLinecap="round"
               />
             </svg>
-          </div>
-
-          <h3 className="mb-3 text-xl font-medium">
-            Hyggelig atmosfære
-          </h3>
-
-          <p className="leading-7 text-[#314B39]/85">
-            Slap af og nyd et godt spil i rolige omgivelser.
-          </p>
-        </div>
+          }
+          title="Hyggelig atmosfære"
+          text="Slap af og nyd et godt spil i rolige omgivelser."
+        />
       </div>
 
-      {/* ÅBNINGSTIDER OG ADRESSE */}
-      <div className="mx-auto grid max-w-6xl gap-5 pb-20 md:grid-cols-2">
-        <div className="rounded-2xl bg-[#2C4934] px-8 py-8 text-left shadow-xl shadow-black/20">
-          <p className="mb-5 text-sm uppercase tracking-[0.25em] text-[#9FB69F]">
+      {/* ÅBNINGSTIDER OG FIND OS */}
+      <div className="mx-auto grid max-w-6xl gap-5 pb-8 md:grid-cols-2">
+        <div className="rounded-[1.75rem] border border-white/5 bg-[#2C4934] px-8 py-9 text-left shadow-xl shadow-black/20">
+          <p className="mb-7 text-xs uppercase tracking-[0.3em] text-[#9FB69F]">
             Åbningstider
           </p>
 
-          <p className="text-2xl leading-10">
-            Man–fre: 12–22
-            <br />
-            Lør–søn: 10–22
-          </p>
+          <div>
+            <p className="text-xs uppercase tracking-[0.28em] text-[#9FB69F]">
+              Mandag – Onsdag
+            </p>
+
+            <p className="mt-2 font-serif text-3xl text-[#F5F1E8]">
+              09.00 – 19.00
+            </p>
+          </div>
+
+          <div className="mt-7 border-t border-[#F5F1E8]/10 pt-7">
+            <p className="text-xs uppercase tracking-[0.28em] text-[#9FB69F]">
+              Torsdag – Søndag
+            </p>
+
+            <p className="mt-2 font-serif text-3xl text-[#F5F1E8]">
+              09.00 – 21.00
+            </p>
+          </div>
         </div>
 
         <button
           onClick={onOpenMap}
-          className="group rounded-2xl bg-[#2C4934] px-8 py-8 text-left shadow-xl shadow-black/20 transition duration-300 hover:-translate-y-1 hover:bg-[#355842]"
+          className="group rounded-[1.75rem] border border-white/5 bg-[#2C4934] px-8 py-9 text-left shadow-xl shadow-black/20 transition duration-300 hover:-translate-y-1 hover:bg-[#355842]"
           type="button"
           aria-label="Se kort og adresse"
         >
-          <div className="flex items-start justify-between gap-6">
+          <div className="flex h-full items-start justify-between gap-6">
             <div>
-              <p className="mb-5 text-sm uppercase tracking-[0.25em] text-[#9FB69F]">
+              <p className="mb-7 text-xs uppercase tracking-[0.3em] text-[#9FB69F]">
                 Find os
               </p>
 
-              <p className="text-2xl leading-9">
+              <p className="font-serif text-3xl leading-tight text-[#F5F1E8]">
                 Likørstræde 3
-                <br />
+              </p>
 
-                <span className="text-lg text-[#F5F1E8]/75">
-                  2800 Kongens Lyngby
-                </span>
+              <p className="mt-3 text-lg text-[#F5F1E8]/75">
+                2800 Kongens Lyngby
+              </p>
+
+              <p className="mt-8 max-w-sm text-sm leading-7 text-[#D6D1C7]">
+                Midt i hjertet af Lyngby og få minutters gang fra stationen.
               </p>
             </div>
 
             <span
               aria-hidden="true"
-              className="mt-1 text-2xl text-[#F5F1E8]/60 transition duration-300 group-hover:translate-x-1 group-hover:text-[#F5F1E8]"
+              className="mt-1 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#F5F1E8]/15 text-xl text-[#F5F1E8]/70 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:bg-[#F5F1E8] group-hover:text-[#183226]"
             >
               ↗
             </span>
@@ -325,11 +348,33 @@ function HomePage({
       <button
         onClick={onOpenFindUs}
         type="button"
-        className="mb-24 rounded-full border border-[#F5F1E8]/20 px-7 py-4 text-sm font-medium text-[#F5F1E8] transition hover:border-[#F5F1E8]/40 hover:bg-[#F5F1E8]/5"
+        className="mt-5 rounded-full border border-[#F5F1E8]/20 px-7 py-4 text-sm font-medium text-[#F5F1E8] transition duration-300 hover:-translate-y-0.5 hover:border-[#F5F1E8]/40 hover:bg-[#F5F1E8]/5"
       >
-        Se praktisk information og rute
+        Se rute og praktisk information
       </button>
     </section>
+  );
+}
+
+function FeatureCard({
+  icon,
+  title,
+  text,
+}: {
+  icon: ReactNode;
+  title: string;
+  text: string;
+}) {
+  return (
+    <article className="rounded-[1.75rem] bg-[#F5F1E8] px-8 py-9 text-center text-[#314B39] shadow-xl shadow-black/20 transition duration-300 hover:-translate-y-1">
+      <div className="mb-5 flex min-h-12 items-center justify-center text-[#314B39]">
+        {icon}
+      </div>
+
+      <h2 className="mb-3 font-serif text-2xl">{title}</h2>
+
+      <p className="leading-7 text-[#314B39]/80">{text}</p>
+    </article>
   );
 }
 
@@ -381,7 +426,6 @@ function EventsPage() {
 function FindUsPage() {
   return (
     <section className="relative z-10 min-h-screen px-5 pb-20 pt-32 sm:px-6 md:pt-40">
-      {/* INTRO */}
       <div className="mx-auto mb-12 max-w-4xl text-center md:mb-16">
         <p className="mb-5 text-sm uppercase tracking-[0.4em] text-[#9FB69F]">
           Find os
@@ -398,9 +442,7 @@ function FindUsPage() {
         </p>
       </div>
 
-      {/* KORT OG INFORMATION */}
       <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.35fr_0.65fr]">
-        {/* KORT */}
         <a
           href={GOOGLE_MAPS_URL}
           target="_blank"
@@ -437,7 +479,6 @@ function FindUsPage() {
           </div>
         </a>
 
-        {/* INFORMATIONSKORT */}
         <div className="rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/82 p-7 shadow-2xl shadow-black/30 backdrop-blur-md sm:p-9">
           <div className="border-b border-white/10 pb-7">
             <p className="text-xs uppercase tracking-[0.32em] text-[#9FB69F]">
@@ -479,9 +520,9 @@ function FindUsPage() {
               title="Åbningstider"
               text={
                 <>
-                  Mandag–fredag: 12–22
+                  Mandag–onsdag: 09.00–19.00
                   <br />
-                  Lørdag–søndag: 10–22
+                  Torsdag–søndag: 09.00–21.00
                 </>
               }
             />
@@ -501,7 +542,6 @@ function FindUsPage() {
         </div>
       </div>
 
-      {/* VELKOMST */}
       <div className="mx-auto mt-8 max-w-7xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#294633]/70 px-7 py-10 text-center shadow-xl shadow-black/20 backdrop-blur-md sm:px-10 md:mt-10 md:py-14">
         <p className="font-serif text-3xl leading-tight text-[#F5F1E8] sm:text-4xl">
           Vi glæder os til at byde dig velkommen.
@@ -524,7 +564,7 @@ function InformationRow({
 }: {
   icon: string;
   title: string;
-  text: React.ReactNode;
+  text: ReactNode;
 }) {
   return (
     <div className="flex gap-4 py-6">
