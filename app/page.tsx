@@ -9,11 +9,9 @@ const GOOGLE_MAPS_URL =
 
 export default function Home() {
   const [view, setView] = useState<View>("home");
-  const [isMapOpen, setIsMapOpen] = useState(false);
 
   const goHome = () => {
     setView("home");
-    setIsMapOpen(false);
 
     window.scrollTo({
       top: 0,
@@ -23,7 +21,6 @@ export default function Home() {
 
   const goToView = (nextView: View) => {
     setView(nextView);
-    setIsMapOpen(false);
 
     window.scrollTo({
       top: 0,
@@ -34,7 +31,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#162F24] text-[#F5F1E8]">
       {/* FAST VANDMÆRKE */}
-      <div className="pointer-events-none fixed inset-x-0 bottom-6 top-[110px] z-0 flex items-center justify-center overflow-hidden md:top-[126px]">
+      <div className="pointer-events-none fixed inset-x-0 bottom-6 top-[104px] z-0 flex items-center justify-center overflow-hidden md:top-[120px]">
         <img
           src="/logo-watermark-transparent.png"
           alt=""
@@ -53,66 +50,66 @@ export default function Home() {
       <div className="pointer-events-none fixed inset-x-0 bottom-0 top-[88px] z-0 bg-[radial-gradient(circle_at_center,rgba(22,47,36,0.00)_0%,rgba(22,47,36,0.06)_52%,rgba(14,29,21,0.62)_100%)] md:top-[104px]" />
 
       {/* HEADER */}
-      <header className="fixed left-0 top-0 z-50 flex w-full items-center justify-between border-b border-white/10 bg-[#163224]/70 px-4 py-3 backdrop-blur-xl sm:px-6 md:px-14">
-        <div className="flex items-center gap-7 md:gap-12">
-          <button
-            onClick={goHome}
-            className="relative z-[60] transition duration-200 hover:scale-[1.04] hover:opacity-90"
-            type="button"
-            aria-label="Gå til forsiden"
-          >
-            <img
-              src="/logo-watermark-transparent.png"
-              alt="House of Brik"
-              className="h-20 w-20 object-contain md:h-24 md:w-24"
-              style={{
-                filter:
-                  "brightness(0) saturate(100%) invert(93%) sepia(13%) saturate(375%) hue-rotate(334deg) brightness(105%) contrast(94%)",
-              }}
-            />
-          </button>
-
-          <nav className="hidden items-center gap-12 text-sm text-[#F5F1E8]/80 md:flex">
-            <button onClick={goHome} className="transition hover:text-white">
-              Home
-            </button>
-
+      <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#163224]/70 px-4 py-3 backdrop-blur-xl sm:px-6 md:px-14">
+        <div className="mx-auto flex w-full max-w-[1500px] items-center">
+          <div className="flex items-center gap-7 md:gap-12">
             <button
-              onClick={() => goToView("events")}
-              className="transition hover:text-white"
+              onClick={goHome}
+              className="relative z-[60] transition duration-200 hover:scale-[1.04] hover:opacity-90"
+              type="button"
+              aria-label="Gå til forsiden"
             >
-              Events
+              <img
+                src="/logo-watermark-transparent.png"
+                alt="House of Brik"
+                className="h-20 w-20 object-contain md:h-24 md:w-24"
+                style={{
+                  filter:
+                    "brightness(0) saturate(100%) invert(93%) sepia(13%) saturate(375%) hue-rotate(334deg) brightness(105%) contrast(94%)",
+                }}
+              />
             </button>
 
-            <button
-              onClick={() => goToView("findos")}
-              className="transition hover:text-white"
-            >
-              Find os
-            </button>
+            <nav className="hidden items-center gap-12 text-sm text-[#F5F1E8]/80 md:flex">
+              <button
+                onClick={goHome}
+                className="transition hover:text-white"
+                type="button"
+              >
+                Home
+              </button>
 
-            <button
-              onClick={() => goToView("praktisk")}
-              className="transition hover:text-white"
-            >
-              Praktisk info
-            </button>
-          </nav>
+              <button
+                onClick={() => goToView("events")}
+                className="transition hover:text-white"
+                type="button"
+              >
+                Events
+              </button>
+
+              <button
+                onClick={() => goToView("findos")}
+                className="transition hover:text-white"
+                type="button"
+              >
+                Find os
+              </button>
+
+              <button
+                onClick={() => goToView("praktisk")}
+                className="transition hover:text-white"
+                type="button"
+              >
+                Praktisk info
+              </button>
+            </nav>
+          </div>
         </div>
-
-        <button
-          onClick={() => goToView("booking")}
-          className="rounded-full bg-[#214A34]/90 px-5 py-3 text-xs font-semibold text-[#F5F1E8] shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-0.5 hover:bg-[#2B5B41] sm:px-6 md:px-7 md:py-4 md:text-sm"
-          type="button"
-        >
-          Book bord
-        </button>
       </header>
 
       {/* SIDER */}
       {view === "home" ? (
         <HomePage
-          onOpenMap={() => setIsMapOpen(true)}
           onOpenFindUs={() => goToView("findos")}
           onOpenBooking={() => goToView("booking")}
         />
@@ -125,27 +122,22 @@ export default function Home() {
       ) : (
         <InfoPage label="Praktisk info" title="Kommer snarest." />
       )}
-
-      {/* KORT-POPUP */}
-      {isMapOpen && <MapModal onClose={() => setIsMapOpen(false)} />}
     </main>
   );
 }
 
 function HomePage({
-  onOpenMap,
   onOpenFindUs,
   onOpenBooking,
 }: {
-  onOpenMap: () => void;
   onOpenFindUs: () => void;
   onOpenBooking: () => void;
 }) {
   return (
-    <section className="relative z-10 px-5 pb-24 pt-24 text-center sm:px-6 md:pt-28">
+    <section className="relative z-10 px-5 pb-20 pt-24 text-center sm:px-6 md:pt-28">
       {/* HERO */}
-      <div className="mx-auto flex min-h-[70vh] max-w-6xl flex-col items-center justify-center pb-10 pt-16 sm:min-h-[72vh] md:pb-14">
-        <p className="mb-7 text-xs uppercase tracking-[0.4em] text-[#A7BCA8] sm:text-sm">
+      <div className="mx-auto flex min-h-[60vh] max-w-6xl flex-col items-center justify-center pb-8 pt-12 sm:min-h-[62vh] md:pb-10">
+        <p className="mb-6 text-xs uppercase tracking-[0.4em] text-[#A7BCA8] sm:text-sm">
           Spil • Smil • Sjov
         </p>
 
@@ -157,7 +149,7 @@ function HomePage({
           Offline hygge starter her!
         </h1>
 
-        <p className="mx-auto mt-8 max-w-2xl text-base leading-8 text-[#D6D1C7] sm:text-lg md:text-xl">
+        <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-[#D6D1C7] sm:text-lg md:text-xl">
           En varm og afslappet boardgame lounge midt i Kongens Lyngby — skabt
           til gode spil, kaffe og tid sammen.
         </p>
@@ -165,16 +157,30 @@ function HomePage({
         <button
           onClick={onOpenBooking}
           type="button"
-          className="mt-9 rounded-full bg-[#F5F1E8] px-8 py-4 text-sm font-semibold text-[#183226] shadow-xl shadow-black/20 transition duration-300 hover:-translate-y-0.5 hover:bg-white"
+          className="mt-9 min-w-[220px] rounded-full bg-[#F5F1E8] px-10 py-5 text-base font-semibold text-[#183226] shadow-2xl shadow-black/25 transition duration-300 hover:-translate-y-1 hover:bg-white sm:min-w-[250px] sm:px-12 sm:py-5 sm:text-lg"
         >
           Book bord
+        </button>
+
+        <button
+          onClick={onOpenFindUs}
+          type="button"
+          className="mt-7 text-sm leading-7 text-[#D6D1C7] transition hover:text-white"
+        >
+          <span className="block font-medium text-[#F5F1E8]">
+            Likørstræde 3 · 2800 Kongens Lyngby
+          </span>
+
+          <span className="block text-[#D6D1C7]/80">
+            Man–ons 09–19 · Tor–søn 09–21
+          </span>
         </button>
       </div>
 
       {/* TRE HVIDE KORT */}
-      <div className="mx-auto grid max-w-6xl gap-5 pb-8 md:grid-cols-3">
+      <div className="mx-auto grid max-w-5xl gap-4 pb-16 md:grid-cols-3">
         <FeatureCard
-          icon={<span className="text-4xl">♕</span>}
+          icon={<span className="text-3xl">♕</span>}
           title="+300 spil"
           text="Brætspil og kortspil til alle aldre og niveauer."
         />
@@ -182,8 +188,8 @@ function HomePage({
         <FeatureCard
           icon={
             <svg
-              width="40"
-              height="40"
+              width="34"
+              height="34"
               viewBox="0 0 64 64"
               fill="none"
               aria-hidden="true"
@@ -227,8 +233,8 @@ function HomePage({
         <FeatureCard
           icon={
             <svg
-              width="48"
-              height="48"
+              width="40"
+              height="40"
               viewBox="0 0 64 64"
               fill="none"
               aria-hidden="true"
@@ -282,75 +288,12 @@ function HomePage({
         />
       </div>
 
-      {/* ÅBNINGSTIDER OG FIND OS */}
-      <div className="mx-auto grid max-w-6xl gap-5 pb-8 md:grid-cols-2">
-        <div className="rounded-[1.75rem] border border-white/5 bg-[#2C4934] px-8 py-9 text-left shadow-xl shadow-black/20">
-          <p className="mb-7 text-xs uppercase tracking-[0.3em] text-[#9FB69F]">
-            Åbningstider
-          </p>
-
-          <div>
-            <p className="text-xs uppercase tracking-[0.28em] text-[#9FB69F]">
-              Mandag – Onsdag
-            </p>
-
-            <p className="mt-2 font-serif text-3xl text-[#F5F1E8]">
-              09.00 – 19.00
-            </p>
-          </div>
-
-          <div className="mt-7 border-t border-[#F5F1E8]/10 pt-7">
-            <p className="text-xs uppercase tracking-[0.28em] text-[#9FB69F]">
-              Torsdag – Søndag
-            </p>
-
-            <p className="mt-2 font-serif text-3xl text-[#F5F1E8]">
-              09.00 – 21.00
-            </p>
-          </div>
-        </div>
-
-        <button
-          onClick={onOpenMap}
-          className="group rounded-[1.75rem] border border-white/5 bg-[#2C4934] px-8 py-9 text-left shadow-xl shadow-black/20 transition duration-300 hover:-translate-y-1 hover:bg-[#355842]"
-          type="button"
-          aria-label="Se kort og adresse"
-        >
-          <div className="flex h-full items-start justify-between gap-6">
-            <div>
-              <p className="mb-7 text-xs uppercase tracking-[0.3em] text-[#9FB69F]">
-                Find os
-              </p>
-
-              <p className="font-serif text-3xl leading-tight text-[#F5F1E8]">
-                Likørstræde 3
-              </p>
-
-              <p className="mt-3 text-lg text-[#F5F1E8]/75">
-                2800 Kongens Lyngby
-              </p>
-
-              <p className="mt-8 max-w-sm text-sm leading-7 text-[#D6D1C7]">
-                Midt i hjertet af Lyngby og få minutters gang fra stationen.
-              </p>
-            </div>
-
-            <span
-              aria-hidden="true"
-              className="mt-1 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#F5F1E8]/15 text-xl text-[#F5F1E8]/70 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:bg-[#F5F1E8] group-hover:text-[#183226]"
-            >
-              ↗
-            </span>
-          </div>
-        </button>
-      </div>
-
       <button
         onClick={onOpenFindUs}
         type="button"
-        className="mt-5 rounded-full border border-[#F5F1E8]/20 px-7 py-4 text-sm font-medium text-[#F5F1E8] transition duration-300 hover:-translate-y-0.5 hover:border-[#F5F1E8]/40 hover:bg-[#F5F1E8]/5"
+        className="rounded-full border border-[#F5F1E8]/20 px-7 py-4 text-sm font-medium text-[#F5F1E8] transition duration-300 hover:-translate-y-0.5 hover:border-[#F5F1E8]/40 hover:bg-[#F5F1E8]/5"
       >
-        Se rute og praktisk information
+        Find os og se ruten
       </button>
     </section>
   );
@@ -366,14 +309,14 @@ function FeatureCard({
   text: string;
 }) {
   return (
-    <article className="rounded-[1.75rem] bg-[#F5F1E8] px-8 py-9 text-center text-[#314B39] shadow-xl shadow-black/20 transition duration-300 hover:-translate-y-1">
-      <div className="mb-5 flex min-h-12 items-center justify-center text-[#314B39]">
+    <article className="rounded-2xl bg-[#F5F1E8] px-6 py-6 text-center text-[#314B39] shadow-xl shadow-black/20 transition duration-300 hover:-translate-y-1">
+      <div className="mb-4 flex min-h-10 items-center justify-center text-[#314B39]">
         {icon}
       </div>
 
-      <h2 className="mb-3 font-serif text-2xl">{title}</h2>
+      <h2 className="mb-2 font-serif text-xl">{title}</h2>
 
-      <p className="leading-7 text-[#314B39]/80">{text}</p>
+      <p className="text-sm leading-6 text-[#314B39]/80">{text}</p>
     </article>
   );
 }
@@ -595,73 +538,5 @@ function InfoPage({ label, title }: { label: string; title: string }) {
         <h1 className="font-serif text-4xl md:text-6xl">{title}</h1>
       </div>
     </section>
-  );
-}
-
-function MapModal({ onClose }: { onClose: () => void }) {
-  return (
-    <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-[#08130E]/85 px-4 py-8 backdrop-blur-md"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="map-modal-title"
-      onClick={onClose}
-    >
-      <div
-        className="relative max-h-full w-full max-w-5xl overflow-y-auto rounded-[2rem] border border-white/10 bg-[#183226] p-3 shadow-2xl shadow-black/60 sm:p-5"
-        onClick={(event) => event.stopPropagation()}
-      >
-        <button
-          onClick={onClose}
-          type="button"
-          aria-label="Luk kort"
-          className="absolute right-5 top-5 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[#10251A]/90 text-xl text-[#F5F1E8] shadow-lg backdrop-blur-md transition hover:bg-[#284B37]"
-        >
-          ×
-        </button>
-
-        <a
-          href={GOOGLE_MAPS_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group block overflow-hidden rounded-[1.5rem] bg-[#F5F1E8]"
-        >
-          <img
-            src="/find-os-kort.png"
-            alt="Kort over House of Briks placering på Likørstræde 3 i Kongens Lyngby"
-            className="h-auto max-h-[62vh] w-full object-cover transition duration-700 group-hover:scale-[1.015]"
-          />
-        </a>
-
-        <div className="flex flex-col gap-6 px-3 pb-3 pt-7 sm:flex-row sm:items-end sm:justify-between sm:px-5 sm:pb-5">
-          <div>
-            <p className="mb-3 text-xs uppercase tracking-[0.35em] text-[#9FB69F]">
-              Find os
-            </p>
-
-            <h2
-              id="map-modal-title"
-              className="font-serif text-3xl text-[#F5F1E8] sm:text-4xl"
-            >
-              Likørstræde 3
-            </h2>
-
-            <p className="mt-2 text-[#D6D1C7]">2800 Kongens Lyngby</p>
-          </div>
-
-          <a
-            href={GOOGLE_MAPS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-[#F5F1E8] px-6 py-4 text-sm font-semibold text-[#183226] shadow-lg transition duration-300 hover:-translate-y-0.5 hover:bg-white"
-          >
-            Åbn i Google Maps
-            <span className="ml-2" aria-hidden="true">
-              ↗
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
   );
 }
