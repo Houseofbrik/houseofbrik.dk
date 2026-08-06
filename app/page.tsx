@@ -134,53 +134,11 @@ function HomePage({
   onOpenBooking: () => void;
 }) {
   return (
-    <section className="relative z-10 px-5 pb-20 pt-24 text-center sm:px-6 md:pt-28">
-      {/* HERO */}
-      <div className="mx-auto flex min-h-[60vh] max-w-6xl flex-col items-center justify-center pb-8 pt-12 sm:min-h-[62vh] md:pb-10">
-        <p className="mb-6 text-xs uppercase tracking-[0.4em] text-[#A7BCA8] sm:text-sm">
-          Spil • Smil • Sjov
-        </p>
-
-        <h1 className="font-serif text-4xl leading-[1.05] tracking-tight sm:text-5xl md:text-7xl">
-          Mere nærvær,
-          <br />
-          Mindre skærm,
-          <br />
-          Offline hygge starter her!
-        </h1>
-
-        <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-[#D6D1C7] sm:text-lg md:text-xl">
-          En varm og afslappet boardgame lounge midt i Kongens Lyngby — skabt
-          til gode spil, kaffe og tid sammen.
-        </p>
-
-        <button
-          onClick={onOpenBooking}
-          type="button"
-          className="mt-9 min-w-[220px] rounded-full bg-[#F5F1E8] px-10 py-5 text-base font-semibold text-[#183226] shadow-2xl shadow-black/25 transition duration-300 hover:-translate-y-1 hover:bg-white sm:min-w-[250px] sm:px-12 sm:py-5 sm:text-lg"
-        >
-          Book bord
-        </button>
-
-        <button
-          onClick={onOpenFindUs}
-          type="button"
-          className="mt-7 text-sm leading-7 text-[#D6D1C7] transition hover:text-white"
-        >
-          <span className="block font-medium text-[#F5F1E8]">
-            Likørstræde 3 · 2800 Kongens Lyngby
-          </span>
-
-          <span className="block text-[#D6D1C7]/80">
-            Man–ons 09–19 · Tor–søn 09–21
-          </span>
-        </button>
-      </div>
-
-      {/* TRE HVIDE KORT */}
-      <div className="mx-auto grid max-w-5xl gap-4 pb-16 md:grid-cols-3">
+    <section className="relative z-10 px-5 pb-20 pt-32 text-center sm:px-6 md:pt-40">
+      {/* USP-KORT ØVERST */}
+      <div className="mx-auto grid max-w-6xl gap-3 md:grid-cols-3 md:gap-4">
         <FeatureCard
-          icon={<span className="text-3xl">♕</span>}
+          icon={<span className="text-2xl">♕</span>}
           title="+300 spil"
           text="Brætspil og kortspil til alle aldre og niveauer."
         />
@@ -188,8 +146,8 @@ function HomePage({
         <FeatureCard
           icon={
             <svg
-              width="34"
-              height="34"
+              width="29"
+              height="29"
               viewBox="0 0 64 64"
               fill="none"
               aria-hidden="true"
@@ -227,14 +185,14 @@ function HomePage({
             </svg>
           }
           title="Til alle"
-          text="Familie, venner, kollegaer – alle er velkomne."
+          text="Familie, venner og kollegaer – alle er velkomne."
         />
 
         <FeatureCard
           icon={
             <svg
-              width="40"
-              height="40"
+              width="34"
+              height="34"
               viewBox="0 0 64 64"
               fill="none"
               aria-hidden="true"
@@ -288,6 +246,48 @@ function HomePage({
         />
       </div>
 
+      {/* HERO */}
+      <div className="mx-auto flex min-h-[67vh] max-w-6xl flex-col items-center justify-center py-16 sm:min-h-[70vh] md:py-20">
+        <p className="mb-6 text-xs uppercase tracking-[0.4em] text-[#A7BCA8] sm:text-sm">
+          Spil • Smil • Sjov
+        </p>
+
+        <h1 className="font-serif text-4xl leading-[1.05] tracking-tight sm:text-5xl md:text-7xl">
+          Mere nærvær,
+          <br />
+          Mindre skærm,
+          <br />
+          Offline hygge starter her!
+        </h1>
+
+        <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-[#D6D1C7] sm:text-lg md:text-xl">
+          En varm og afslappet boardgame lounge midt i Kongens Lyngby – skabt
+          til gode spil, kaffe og tid sammen.
+        </p>
+
+        <button
+          onClick={onOpenBooking}
+          type="button"
+          className="mt-9 min-w-[220px] rounded-full bg-[#F5F1E8] px-10 py-5 text-base font-semibold text-[#183226] shadow-2xl shadow-black/25 transition duration-300 hover:-translate-y-1 hover:bg-white sm:min-w-[250px] sm:px-12 sm:text-lg"
+        >
+          Book bord
+        </button>
+
+        <button
+          onClick={onOpenFindUs}
+          type="button"
+          className="mt-7 text-sm leading-7 text-[#D6D1C7] transition hover:text-white"
+        >
+          <span className="block font-medium text-[#F5F1E8]">
+            Likørstræde 3 · 2800 Kongens Lyngby
+          </span>
+
+          <span className="block text-[#D6D1C7]/80">
+            Man–ons 09–19 · Tor–søn 09–21
+          </span>
+        </button>
+      </div>
+
       <button
         onClick={onOpenFindUs}
         type="button"
@@ -309,14 +309,16 @@ function FeatureCard({
   text: string;
 }) {
   return (
-    <article className="rounded-2xl bg-[#F5F1E8] px-6 py-6 text-center text-[#314B39] shadow-xl shadow-black/20 transition duration-300 hover:-translate-y-1">
-      <div className="mb-4 flex min-h-10 items-center justify-center text-[#314B39]">
+    <article className="rounded-[1.4rem] border border-[#314B39]/5 bg-[#F5F1E8] px-5 py-5 text-center text-[#314B39] shadow-lg shadow-black/15 transition duration-300 hover:-translate-y-0.5">
+      <div className="mb-2 flex min-h-8 items-center justify-center text-[#314B39]">
         {icon}
       </div>
 
-      <h2 className="mb-2 font-serif text-xl">{title}</h2>
+      <h2 className="font-serif text-xl leading-tight">{title}</h2>
 
-      <p className="text-sm leading-6 text-[#314B39]/80">{text}</p>
+      <p className="mx-auto mt-2 max-w-xs text-sm leading-6 text-[#314B39]/75">
+        {text}
+      </p>
     </article>
   );
 }
