@@ -31,14 +31,14 @@ export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#162F24] text-[#F5F1E8]">
       {/* FAST VANDMÆRKE */}
-      <div className="pointer-events-none fixed inset-x-0 bottom-6 top-[104px] z-0 flex items-center justify-center overflow-hidden md:top-[120px]">
+      <div className="pointer-events-none fixed inset-x-0 bottom-4 top-[104px] z-0 flex items-center justify-center overflow-hidden md:top-[112px]">
         <img
           src="/logo-watermark-transparent.png"
           alt=""
           aria-hidden="true"
           className="max-h-full max-w-full select-none object-contain opacity-[0.34]"
           style={{
-            width: "min(58vw, 660px)",
+            width: "min(54vw, 620px)",
             height: "auto",
             filter: "brightness(0.28) contrast(1.6) blur(0.2px)",
             mixBlendMode: "multiply",
@@ -50,7 +50,7 @@ export default function Home() {
       <div className="pointer-events-none fixed inset-x-0 bottom-0 top-[88px] z-0 bg-[radial-gradient(circle_at_center,rgba(22,47,36,0.00)_0%,rgba(22,47,36,0.06)_52%,rgba(14,29,21,0.62)_100%)] md:top-[104px]" />
 
       {/* HEADER */}
-      <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#163224]/70 px-4 py-3 backdrop-blur-xl sm:px-6 md:px-14">
+      <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#163224]/75 px-4 py-2 backdrop-blur-xl sm:px-6 md:px-12">
         <div className="mx-auto flex w-full max-w-[1500px] items-center">
           <div className="flex items-center gap-7 md:gap-12">
             <button
@@ -62,7 +62,7 @@ export default function Home() {
               <img
                 src="/logo-watermark-transparent.png"
                 alt="House of Brik"
-                className="h-20 w-20 object-contain md:h-24 md:w-24"
+                className="h-16 w-16 object-contain md:h-20 md:w-20"
                 style={{
                   filter:
                     "brightness(0) saturate(100%) invert(93%) sepia(13%) saturate(375%) hue-rotate(334deg) brightness(105%) contrast(94%)",
@@ -70,7 +70,7 @@ export default function Home() {
               />
             </button>
 
-            <nav className="hidden items-center gap-12 text-sm text-[#F5F1E8]/80 md:flex">
+            <nav className="hidden items-center gap-11 text-sm text-[#F5F1E8]/80 md:flex">
               <button
                 onClick={goHome}
                 className="transition hover:text-white"
@@ -134,11 +134,11 @@ function HomePage({
   onOpenBooking: () => void;
 }) {
   return (
-    <section className="relative z-10 px-5 pb-20 pt-32 text-center sm:px-6 md:pt-40">
+    <section className="relative z-10 px-4 pb-8 pt-[104px] text-center sm:px-6 md:pt-[116px]">
       {/* USP-KORT ØVERST */}
-      <div className="mx-auto grid max-w-6xl gap-3 md:grid-cols-3 md:gap-4">
+      <div className="mx-auto grid max-w-6xl gap-3 md:grid-cols-3">
         <FeatureCard
-          icon={<span className="text-2xl">♕</span>}
+          icon={<span className="text-xl">♕</span>}
           title="+300 spil"
           text="Brætspil og kortspil til alle aldre og niveauer."
         />
@@ -146,8 +146,8 @@ function HomePage({
         <FeatureCard
           icon={
             <svg
-              width="29"
-              height="29"
+              width="25"
+              height="25"
               viewBox="0 0 64 64"
               fill="none"
               aria-hidden="true"
@@ -191,8 +191,8 @@ function HomePage({
         <FeatureCard
           icon={
             <svg
-              width="34"
-              height="34"
+              width="29"
+              height="29"
               viewBox="0 0 64 64"
               fill="none"
               aria-hidden="true"
@@ -246,13 +246,13 @@ function HomePage({
         />
       </div>
 
-      {/* HERO */}
-      <div className="mx-auto flex min-h-[67vh] max-w-6xl flex-col items-center justify-center py-16 sm:min-h-[70vh] md:py-20">
-        <p className="mb-6 text-xs uppercase tracking-[0.4em] text-[#A7BCA8] sm:text-sm">
+      {/* KOMPAKT HERO */}
+      <div className="mx-auto flex min-h-[calc(100svh-300px)] max-w-6xl flex-col items-center justify-center py-5 md:min-h-[calc(100svh-274px)] md:py-4">
+        <p className="mb-3 text-[10px] uppercase tracking-[0.42em] text-[#A7BCA8] sm:text-xs">
           Spil • Smil • Sjov
         </p>
 
-        <h1 className="font-serif text-4xl leading-[1.05] tracking-tight sm:text-5xl md:text-7xl">
+        <h1 className="font-serif text-4xl leading-[1.02] tracking-tight sm:text-5xl md:text-6xl lg:text-[4.25rem]">
           Mere nærvær,
           <br />
           Mindre skærm,
@@ -260,7 +260,7 @@ function HomePage({
           Offline hygge starter her!
         </h1>
 
-        <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-[#D6D1C7] sm:text-lg md:text-xl">
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-[#D6D1C7] sm:text-base sm:leading-7 md:text-lg">
           En varm og afslappet boardgame lounge midt i Kongens Lyngby – skabt
           til gode spil, kaffe og tid sammen.
         </p>
@@ -268,7 +268,7 @@ function HomePage({
         <button
           onClick={onOpenBooking}
           type="button"
-          className="mt-9 min-w-[220px] rounded-full bg-[#F5F1E8] px-10 py-5 text-base font-semibold text-[#183226] shadow-2xl shadow-black/25 transition duration-300 hover:-translate-y-1 hover:bg-white sm:min-w-[250px] sm:px-12 sm:text-lg"
+          className="mt-5 min-w-[220px] rounded-full bg-[#F5F1E8] px-10 py-4 text-base font-semibold text-[#183226] shadow-2xl shadow-black/25 transition duration-300 hover:-translate-y-1 hover:bg-white sm:min-w-[250px] sm:px-12 sm:text-lg"
         >
           Book bord
         </button>
@@ -276,7 +276,7 @@ function HomePage({
         <button
           onClick={onOpenFindUs}
           type="button"
-          className="mt-7 text-sm leading-7 text-[#D6D1C7] transition hover:text-white"
+          className="mt-4 text-xs leading-6 text-[#D6D1C7] transition hover:text-white sm:text-sm"
         >
           <span className="block font-medium text-[#F5F1E8]">
             Likørstræde 3 · 2800 Kongens Lyngby
@@ -287,14 +287,6 @@ function HomePage({
           </span>
         </button>
       </div>
-
-      <button
-        onClick={onOpenFindUs}
-        type="button"
-        className="rounded-full border border-[#F5F1E8]/20 px-7 py-4 text-sm font-medium text-[#F5F1E8] transition duration-300 hover:-translate-y-0.5 hover:border-[#F5F1E8]/40 hover:bg-[#F5F1E8]/5"
-      >
-        Find os og se ruten
-      </button>
     </section>
   );
 }
@@ -309,14 +301,14 @@ function FeatureCard({
   text: string;
 }) {
   return (
-    <article className="rounded-[1.4rem] border border-[#314B39]/5 bg-[#F5F1E8] px-5 py-5 text-center text-[#314B39] shadow-lg shadow-black/15 transition duration-300 hover:-translate-y-0.5">
-      <div className="mb-2 flex min-h-8 items-center justify-center text-[#314B39]">
+    <article className="rounded-[1.35rem] border border-[#314B39]/5 bg-[#F5F1E8] px-5 py-4 text-center text-[#314B39] shadow-lg shadow-black/15 transition duration-300 hover:-translate-y-0.5">
+      <div className="mb-1 flex min-h-7 items-center justify-center text-[#314B39]">
         {icon}
       </div>
 
-      <h2 className="font-serif text-xl leading-tight">{title}</h2>
+      <h2 className="font-serif text-lg leading-tight md:text-xl">{title}</h2>
 
-      <p className="mx-auto mt-2 max-w-xs text-sm leading-6 text-[#314B39]/75">
+      <p className="mx-auto mt-1.5 max-w-xs text-xs leading-5 text-[#314B39]/75 md:text-sm">
         {text}
       </p>
     </article>
@@ -325,7 +317,7 @@ function FeatureCard({
 
 function EventsPage() {
   return (
-    <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-16 pt-36 md:pt-44">
+    <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-16 pt-32 md:pt-36">
       <div className="max-w-4xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 py-12 shadow-2xl shadow-black/30 backdrop-blur-md md:px-16 md:py-16">
         <p className="mb-5 text-sm uppercase tracking-[0.4em] text-[#9FB69F]">
           Events
@@ -370,7 +362,7 @@ function EventsPage() {
 
 function FindUsPage() {
   return (
-    <section className="relative z-10 min-h-screen px-5 pb-20 pt-32 sm:px-6 md:pt-40">
+    <section className="relative z-10 min-h-screen px-5 pb-20 pt-28 sm:px-6 md:pt-32">
       <div className="mx-auto mb-12 max-w-4xl text-center md:mb-16">
         <p className="mb-5 text-sm uppercase tracking-[0.4em] text-[#9FB69F]">
           Find os
@@ -531,7 +523,7 @@ function InformationRow({
 
 function InfoPage({ label, title }: { label: string; title: string }) {
   return (
-    <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pt-28 text-center">
+    <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pt-24 text-center">
       <div className="max-w-4xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/70 px-8 py-14 shadow-2xl shadow-black/30 backdrop-blur-md md:px-16">
         <p className="mb-6 text-sm uppercase tracking-[0.45em] text-[#7FA083]">
           {label}
