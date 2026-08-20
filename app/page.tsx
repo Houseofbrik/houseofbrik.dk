@@ -50,8 +50,7 @@ export default function Home() {
       <div className="pointer-events-none fixed inset-x-0 bottom-0 top-[88px] z-0 bg-[radial-gradient(circle_at_center,rgba(22,47,36,0.00)_0%,rgba(22,47,36,0.06)_52%,rgba(14,29,21,0.62)_100%)] md:top-[104px]" />
 
       {/* HEADER */}
-      <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#163224]/75 px-4 py-2 backdrop-blur-xl sm:px-6 md:px-12">
-        <div className="mx-auto flex w-full max-w-[1500px] items-center">
+<header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#163224]/75 px-4 py-3 backdrop-blur-xl sm:px-6 md:px-12">        <div className="mx-auto flex w-full max-w-[1500px] items-center">
           <div className="flex items-center gap-7 md:gap-12">
             {/* LOGO */}
             <button
@@ -63,7 +62,7 @@ export default function Home() {
               <img
                 src="/logo-watermark-transparent.png"
                 alt="House of Brik"
-className="h-20 w-20 object-contain md:h-24 md:w-24"
+className="h-24 w-24 object-contain md:h-28 md:w-28"
                 style={{
                   filter:
                     "brightness(0) saturate(100%) invert(93%) sepia(13%) saturate(375%) hue-rotate(334deg) brightness(105%) contrast(94%)",
