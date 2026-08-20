@@ -53,6 +53,7 @@ export default function Home() {
       <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#163224]/75 px-4 py-2 backdrop-blur-xl sm:px-6 md:px-12">
         <div className="mx-auto flex w-full max-w-[1500px] items-center">
           <div className="flex items-center gap-7 md:gap-12">
+            {/* LOGO */}
             <button
               onClick={goHome}
               className="relative z-[60] transition duration-200 hover:scale-[1.04] hover:opacity-90"
@@ -70,13 +71,38 @@ export default function Home() {
               />
             </button>
 
-            <nav className="hidden items-center gap-11 text-sm text-[#F5F1E8]/80 md:flex">
+            {/* NAVIGATION */}
+            <nav className="hidden items-center gap-8 text-sm text-[#F5F1E8]/80 md:flex">
               <button
                 onClick={goHome}
                 className="transition hover:text-white"
                 type="button"
               >
-                Home
+                Velkommen
+              </button>
+
+              <button
+                onClick={() => goToView("booking")}
+                type="button"
+                className="rounded-full bg-[#F5F1E8] px-6 py-3 font-semibold text-[#183226] shadow-lg shadow-black/15 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-xl"
+              >
+                Book bord
+              </button>
+
+              <button
+                onClick={() => goToView("praktisk")}
+                className="transition hover:text-white"
+                type="button"
+              >
+                Før dit besøg
+              </button>
+
+              <button
+                onClick={() => goToView("findos")}
+                className="transition hover:text-white"
+                type="button"
+              >
+                Kontakt
               </button>
 
               <button
@@ -85,22 +111,6 @@ export default function Home() {
                 type="button"
               >
                 Events
-              </button>
-
-              <button
-                onClick={() => goToView("findos")}
-                className="transition hover:text-white"
-                type="button"
-              >
-                Find os
-              </button>
-
-              <button
-                onClick={() => goToView("praktisk")}
-                className="transition hover:text-white"
-                type="button"
-              >
-                Praktisk info
               </button>
             </nav>
           </div>
@@ -120,7 +130,7 @@ export default function Home() {
       ) : view === "booking" ? (
         <InfoPage label="Book bord" title="Booking åbner snart." />
       ) : (
-        <InfoPage label="Praktisk info" title="Kommer snarest." />
+        <InfoPage label="Før dit besøg" title="Kommer snarest." />
       )}
     </main>
   );
@@ -365,7 +375,7 @@ function FindUsPage() {
     <section className="relative z-10 min-h-screen px-5 pb-20 pt-28 sm:px-6 md:pt-32">
       <div className="mx-auto mb-12 max-w-4xl text-center md:mb-16">
         <p className="mb-5 text-sm uppercase tracking-[0.4em] text-[#9FB69F]">
-          Find os
+          Kontakt
         </p>
 
         <h1 className="font-serif text-4xl leading-tight text-[#F5F1E8] sm:text-5xl md:text-7xl">
