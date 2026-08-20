@@ -145,7 +145,7 @@ function HomePage({
   onOpenBooking: () => void;
 }) {
   return (
-    <section className="relative z-10 px-4 pb-8 pt-[128px] text-center sm:px-6 md:pt-[140px]">
+<section className="relative z-10 px-4 pb-8 pt-[156px] text-center sm:px-6 md:pt-[168px]">
       {/* USP-KORT ØVERST */}
       <div className="mx-auto grid max-w-6xl gap-3 md:grid-cols-3">
         <FeatureCard
