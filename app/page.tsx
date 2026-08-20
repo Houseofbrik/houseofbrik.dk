@@ -2,7 +2,7 @@
 
 import { useState, type ReactNode } from "react";
 
-type View = "home" | "events" | "findos" | "praktisk" | "booking";
+type View = "home" | "welcome" | "events" | "findos" | "praktisk" | "booking";
 
 const GOOGLE_MAPS_URL =
   "https://www.google.com/maps?q=55.769296185603004,12.504498671447118";
@@ -74,7 +74,7 @@ export default function Home() {
             {/* NAVIGATION */}
             <nav className="hidden items-center gap-8 text-sm text-[#F5F1E8]/80 md:flex">
               <button
-                onClick={goHome}
+                onClick={() => goToView("welcome")}
                 className="transition hover:text-white"
                 type="button"
               >
@@ -123,8 +123,10 @@ export default function Home() {
           onOpenFindUs={() => goToView("findos")}
           onOpenBooking={() => goToView("booking")}
         />
-      ) : view === "events" ? (
-        <EventsPage />
+      ) : view === "welcome" ? (
+  <WelcomePage />
+) : view === "events" ? (
+  <EventsPage />
       ) : view === "findos" ? (
         <FindUsPage />
       ) : view === "booking" ? (
@@ -324,6 +326,65 @@ function FeatureCard({
     </article>
   );
 }
+function WelcomePage() {
+  return (
+    <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-16 pt-32 md:pt-36">
+      <div className="max-w-4xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 py-12 shadow-2xl shadow-black/30 backdrop-blur-md md:px-16 md:py-16">
+        <p className="mb-5 text-center text-sm uppercase tracking-[0.4em] text-[#9FB69F]">
+          Velkommen
+        </p>
+
+        <h1 className="text-center font-serif text-4xl text-[#F5F1E8] md:text-6xl">
+          Det næste træk er dit…
+        </h1>
+
+        <div className="mx-auto mt-10 max-w-3xl space-y-7 text-base leading-8 text-[#D6D1C7] md:text-lg md:leading-9">
+          <p className="text-center text-lg font-medium text-[#F5F1E8] md:text-xl">
+            Tag plads ved bordet, vælg et spil, bestil en god kop kaffe, en
+            forfriskende drik eller en let snack – og nyd et par timer, hvor
+            nærvær, fællesskab og hygge er i centrum.
+          </p>
+
+          <p>
+            House of Brik blev skabt med en enkel ambition: at skabe et
+            samlingssted, hvor mennesker samles omkring et bord, nærvær får
+            plads, og gode oplevelser opstår helt naturligt.
+          </p>
+
+          <p>
+            Her handler det ikke om at skynde sig videre. Her handler det om at
+            sætte tempoet ned, lægge telefonen væk og nyde tiden sammen med
+            familie, venner, kolleger eller én, du holder af.
+          </p>
+
+          <p>
+            Hos os finder du{" "}
+            <strong className="font-semibold text-[#F5F1E8]">+300</strong>{" "}
+            moderne bræt- og kortspil – fra de velkendte klassikere til nye
+            favoritter, der venter på at blive opdaget. Uanset om du er erfaren
+            brætspiller eller aldrig har prøvet moderne brætspil før, er der
+            noget for alle – uanset erfaring og alder.
+          </p>
+
+          <div className="pt-5 text-center">
+            <p className="font-serif text-2xl text-[#F5F1E8] md:text-3xl">
+              House of Brik handler ikke kun om spil.
+            </p>
+
+            <p className="mt-3">
+              Det handler om nærvær, fællesskab og gode oplevelser.
+            </p>
+
+            <p className="mt-7 font-semibold text-[#F5F1E8]">
+              Vi glæder os til at se dig.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 function EventsPage() {
   return (
