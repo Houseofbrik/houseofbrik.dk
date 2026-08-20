@@ -302,7 +302,6 @@ function HomePage({
     </section>
   );
 }
-
 function FeatureCard({
   icon,
   title,
@@ -328,18 +327,18 @@ function FeatureCard({
 }
 function WelcomePage() {
   return (
-    <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-16 pt-32 md:pt-36">
-      <div className="max-w-4xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 py-12 shadow-2xl shadow-black/30 backdrop-blur-md md:px-16 md:py-16">
-        <p className="mb-5 text-center text-sm uppercase tracking-[0.4em] text-[#9FB69F]">
+    <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-5 pt-24 md:pt-28">
+      <div className="w-full max-w-5xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 py-7 shadow-2xl shadow-black/30 backdrop-blur-md md:px-14 md:py-8">
+        <p className="mb-2 text-center text-xs uppercase tracking-[0.4em] text-[#9FB69F] md:text-sm">
           Velkommen
         </p>
 
-        <h1 className="text-center font-serif text-4xl text-[#F5F1E8] md:text-6xl">
+        <h1 className="text-center font-serif text-4xl leading-tight text-[#F5F1E8] md:text-5xl">
           Det næste træk er dit…
         </h1>
 
-        <div className="mx-auto mt-10 max-w-3xl space-y-7 text-base leading-8 text-[#D6D1C7] md:text-lg md:leading-9">
-          <p className="text-center text-lg font-medium text-[#F5F1E8] md:text-xl">
+        <div className="mx-auto mt-5 max-w-4xl space-y-3 text-base leading-6 text-[#D6D1C7] md:text-[17px] md:leading-7">
+          <p className="text-center text-lg font-medium leading-7 text-[#F5F1E8]">
             Tag plads ved bordet, vælg et spil, bestil en god kop kaffe, en
             forfriskende drik eller en let snack – og nyd et par timer, hvor
             nærvær, fællesskab og hygge er i centrum.
@@ -366,16 +365,16 @@ function WelcomePage() {
             noget for alle – uanset erfaring og alder.
           </p>
 
-          <div className="pt-5 text-center">
-            <p className="font-serif text-2xl text-[#F5F1E8] md:text-3xl">
+          <div className="pt-2 text-center">
+            <p className="font-serif text-xl text-[#F5F1E8] md:text-2xl">
               House of Brik handler ikke kun om spil.
             </p>
 
-            <p className="mt-3">
+            <p className="mt-1">
               Det handler om nærvær, fællesskab og gode oplevelser.
             </p>
 
-            <p className="mt-7 font-semibold text-[#F5F1E8]">
+            <p className="mt-3 font-semibold text-[#F5F1E8]">
               Vi glæder os til at se dig.
             </p>
           </div>
@@ -384,7 +383,6 @@ function WelcomePage() {
     </section>
   );
 }
-
 
 function EventsPage() {
   return (
