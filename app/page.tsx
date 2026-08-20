@@ -63,7 +63,7 @@ export default function Home() {
               <img
                 src="/logo-watermark-transparent.png"
                 alt="House of Brik"
-                className="h-16 w-16 object-contain md:h-20 md:w-20"
+className="h-20 w-20 object-contain md:h-24 md:w-24"
                 style={{
                   filter:
                     "brightness(0) saturate(100%) invert(93%) sepia(13%) saturate(375%) hue-rotate(334deg) brightness(105%) contrast(94%)",
