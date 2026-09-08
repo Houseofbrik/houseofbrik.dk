@@ -148,9 +148,9 @@ function HomePage({
   onOpenBooking: () => void;
 }) {
   return (
-<section className="relative z-10 px-4 pb-8 pt-[156px] text-center sm:px-6 md:pt-[168px]">
+<section className="relative z-10 flex flex-col px-4 pb-8 pt-[156px] text-center sm:px-6 md:pt-[168px]">
       {/* USP-KORT ØVERST */}
-      <div className="mx-auto grid max-w-6xl gap-3 md:grid-cols-3">
+    <div className="order-2 mx-auto grid w-full max-w-6xl gap-3 md:grid-cols-3">
         <FeatureCard
           icon={<span className="text-xl">♕</span>}
           title="+300 spil"
@@ -261,7 +261,7 @@ function HomePage({
       </div>
 
       {/* KOMPAKT HERO */}
-      <div className="mx-auto flex min-h-[calc(100svh-300px)] max-w-6xl flex-col items-center justify-center py-5 md:min-h-[calc(100svh-274px)] md:py-4">
+      <div className="order-1 mx-auto flex min-h-[calc(100svh-300px)] max-w-6xl flex-col items-center justify-center py-5 md:min-h-[calc(100svh-274px)] md:py-4">
         <p className="mb-3 text-[10px] uppercase tracking-[0.42em] text-[#A7BCA8] sm:text-xs">
           Spil • Smil • Sjov
         </p>
@@ -279,13 +279,6 @@ function HomePage({
           til gode spil, kaffe og tid sammen.
         </p>
 
-        <button
-          onClick={onOpenBooking}
-          type="button"
-          className="mt-5 min-w-[220px] rounded-full bg-[#F5F1E8] px-10 py-4 text-base font-semibold text-[#183226] shadow-2xl shadow-black/25 transition duration-300 hover:-translate-y-1 hover:bg-white sm:min-w-[250px] sm:px-12 sm:text-lg"
-        >
-          Book bord
-        </button>
 
         <button
           onClick={onOpenFindUs}
