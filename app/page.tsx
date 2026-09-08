@@ -594,13 +594,57 @@ function InformationRow({
 
 function InfoPage({ label, title }: { label: string; title: string }) {
   return (
-    <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pt-24 text-center">
-      <div className="max-w-4xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/70 px-8 py-14 shadow-2xl shadow-black/30 backdrop-blur-md md:px-16">
-        <p className="mb-6 text-sm uppercase tracking-[0.45em] text-[#7FA083]">
+    <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-16 pt-32 text-center md:pt-40">
+      <div className="max-w-4xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 py-10 shadow-2xl shadow-black/30 backdrop-blur-md md:px-12">
+        <p className="mb-4 text-sm uppercase tracking-[0.4em] text-[#7FA083]">
           {label}
         </p>
 
-        <h1 className="font-serif text-4xl md:text-6xl">{title}</h1>
+        <h1 className="font-serif text-4xl text-[#F5F1E8] md:text-5xl">
+          {title}
+        </h1>
+
+        {label === "Før dit besøg" && (
+          <div className="mx-auto mt-7 max-w-3xl space-y-4 text-sm leading-6 text-[#D6D1C7] md:text-base md:leading-7">
+            <p className="font-medium text-[#F5F1E8]">
+              Det skal være nemt at være gæst hos House of Brik.
+            </p>
+
+            <p>
+              Kom forbi og gå på opdagelse blandt mere end 300 bræt- og kortspil – fra de velkendte klassikere til nye favoritter.
+            </p>
+
+            <p>
+              Hos os køber I tid ved bordet, og mens tiden er jeres, kan I spille lige så meget, I har lyst til. Find et spil, skift undervejs eller prøv noget helt nyt.
+            </p>
+
+            <p>
+              Bestil en god kop kaffe, noget koldt at drikke eller en snack, og bliv hængende så længe det passer jer.
+            </p>
+
+            <p>
+              Du behøver ikke være garvet brætspiller. Kom med vennerne, familien, kollegaerne eller din date. Her er plads til både dem, der kender reglerne udenad, og dem, der bare har lyst til at være med.
+            </p>
+
+            <p>
+              Vi serverer selv kaffe, kolde drikke og snacks, og derfor er det ikke muligt at medbringe egen mad og drikke.
+            </p>
+
+            <div className="pt-3">
+              <p className="font-serif text-xl text-[#F5F1E8] md:text-2xl">
+                Mød op. Find et spil. Sæt jer ned.
+              </p>
+
+              <p className="mt-3 text-xs font-medium uppercase tracking-[0.32em] text-[#9FB69F] md:text-sm">
+                Spil • Smil • Sjov
+              </p>
+
+              <p className="mt-3 font-medium text-[#F5F1E8]">
+                Så enkelt er det.
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
