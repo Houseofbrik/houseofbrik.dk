@@ -80,13 +80,7 @@ className="h-24 w-24 object-contain md:h-28 md:w-28"
                 Velkommen
               </button>
 
-              <button
-                onClick={() => goToView("booking")}
-                type="button"
-                className="rounded-full bg-[#F5F1E8] px-6 py-3 font-semibold text-[#183226] shadow-lg shadow-black/15 transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-xl"
-              >
-                Book bord
-              </button>
+              
 
               <button
                 onClick={() => goToView("praktisk")}
@@ -148,7 +142,7 @@ function HomePage({
   onOpenBooking: () => void;
 }) {
   return (
-<section className="relative z-10 flex flex-col px-4 pb-8 pt-[156px] text-center sm:px-6 md:pt-[168px]">
+<section className="relative z-10 flex flex-col px-4 pb-6 pt-[140px] text-center sm:px-6 md:pt-[148px]">
       {/* USP-KORT ØVERST */}
     <div className="order-2 mx-auto grid w-full max-w-6xl gap-3 md:grid-cols-3">
         <FeatureCard
@@ -261,7 +255,7 @@ function HomePage({
       </div>
 
       {/* KOMPAKT HERO */}
-      <div className="order-1 mx-auto flex min-h-[calc(100svh-300px)] max-w-6xl flex-col items-center justify-center py-5 md:min-h-[calc(100svh-274px)] md:py-4">
+      <div className="order-1 mx-auto flex min-h-[calc(100svh-340px)] max-w-6xl flex-col items-center justify-center py-3 md:min-h-[calc(100svh-330px)] md:py-3">
         <p className="mb-3 text-[10px] uppercase tracking-[0.42em] text-[#A7BCA8] sm:text-xs">
           Spil • Smil • Sjov
         </p>
