@@ -146,7 +146,7 @@ function HomePage({
       {/* USP-KORT ØVERST */}
     <div className="order-2 mx-auto grid w-full max-w-6xl gap-3 md:grid-cols-3">
         <FeatureCard
-          icon={<span className="text-xl">♕</span>}
+         icon={<span className="text-2xl leading-none">♕</span>}
           title="+300 spil"
           text="Brætspil og kortspil til alle aldre og niveauer."
         />
