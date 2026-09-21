@@ -662,7 +662,7 @@ function InfoPage({ label, title }: { label: string; title: string }) {
   const isPractical = label === "Før dit besøg";
 
   return (
-<section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-4 pt-42 md:pt-46">
+<section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-4 pt-40 md:pt-44">
   <div className="max-w-4xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 pb-4 pt-8 text-center shadow-2xl shadow-black/30 backdrop-blur-md">
   <p className="mb-3 text-sm uppercase tracking-[0.4em] text-[#7FA083]">
     {label}
