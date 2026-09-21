@@ -667,7 +667,7 @@ function InfoPage({ label, title }: { label: string; title: string }) {
           {label}
         </p>
 
-        <h1 className="font-serif text-4xl text-[#F5F1E8] md:text-5xl">
+        <h1 className="font-serif text-4xl text-[#F5F1E8] md:text-4xl">
           {title}
         </h1>
 
