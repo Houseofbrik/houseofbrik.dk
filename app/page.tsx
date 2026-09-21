@@ -228,7 +228,7 @@ function HomePage({
     <div className="order-2 mx-auto grid w-full max-w-6xl gap-3 md:grid-cols-3">
         <FeatureCard
          icon={<span className="text-3xl leading-none">♕</span>}
-          title="+300 spil"
+      title="Masser af spil"
           text="Brætspil og kortspil til alle aldre og niveauer."
         />
 
@@ -427,13 +427,11 @@ function WelcomePage() {
           </p>
 
           <p>
-            Hos os finder du{" "}
-            <strong className="font-semibold text-[#F5F1E8]">+300</strong>{" "}
-            moderne bræt- og kortspil – fra de velkendte klassikere til nye
-            favoritter, der venter på at blive opdaget. Uanset om du er erfaren
-            brætspiller eller aldrig har prøvet moderne brætspil før, er der
-            noget for alle – uanset erfaring og alder.
-          </p>
+  Hos os finder du et stort udvalg af moderne bræt- og kortspil – fra de
+  velkendte klassikere til nye favoritter, der venter på at blive opdaget.
+  Uanset om du er erfaren brætspiller eller aldrig har prøvet moderne
+  brætspil før, er der noget for alle – uanset erfaring og alder.
+</p>
 
           <div className="pt-2 text-center">
             <p className="font-serif text-xl text-[#F5F1E8] md:text-2xl">
@@ -679,7 +677,7 @@ function InfoPage({ label, title }: { label: string; title: string }) {
             </p>
 
             <p>
-              Kom forbi og gå på opdagelse blandt mere end 300 bræt- og kortspil – fra de velkendte klassikere til nye favoritter.
+            Kom forbi og gå på opdagelse blandt vores bræt- og kortspil – fra de velkendte klassikere til nye favoritter.
             </p>
 
             <p>
