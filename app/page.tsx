@@ -673,7 +673,7 @@ function InfoPage({ label, title }: { label: string; title: string }) {
         </h1>
 
         {isPractical && (
-<div className="mx-auto mt-5 max-w-3xl space-y-5 text-left text-base leading-8 text-[#D6D1C7] sm:text-lg">            <p className="font-medium text-[#F5F1E8]">
+<div className="mx-auto mt-5 max-w-4xl space-y-5 text-left text-base leading-8 text-[#D6D1C7] sm:text-lg">            <p className="font-medium text-[#F5F1E8]">
               Det skal være nemt at være gæst hos House of Brik.
             </p>
 
