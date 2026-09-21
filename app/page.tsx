@@ -9,7 +9,7 @@ const GOOGLE_MAPS_URL =
 
 export default function Home() {
   const [view, setView] = useState<View>("home");
-
+const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const goHome = () => {
     setView("home");
 
@@ -104,12 +104,93 @@ className="h-24 w-24 object-contain md:h-28 md:w-28"
                 type="button"
               >
                 Events
-              </button>
-            </nav>
+</button>
+</nav>
+{/* MOBIL MENU-KNAP */}
+<button
+  onClick={() => setIsMobileMenuOpen(true)}
+  type="button"
+  className="ml-auto flex h-11 w-11 items-center justify-center rounded-full border border-[#F5F1E8]/20 text-[#F5F1E8] transition hover:bg-[#F5F1E8]/10 md:hidden"
+  aria-label="Åbn menu"
+>
+  <span className="flex flex-col gap-[5px]">
+    <span className="block h-[1px] w-5 bg-current" />
+    <span className="block h-[1px] w-5 bg-current" />
+    <span className="block h-[1px] w-5 bg-current" />
+  </span>
+</button>
           </div>
         </div>
       </header>
 
+{isMobileMenuOpen && (
+  <div className="fixed inset-0 z-[100] md:hidden">
+    <button
+      type="button"
+      aria-label="Luk menu"
+      onClick={() => setIsMobileMenuOpen(false)}
+      className="absolute inset-0 bg-black/40"
+    />
+
+    <div className="absolute right-0 top-0 flex h-full w-[82%] max-w-sm flex-col bg-[#163224] px-8 py-8 shadow-2xl">
+      <button
+        type="button"
+        onClick={() => setIsMobileMenuOpen(false)}
+        className="ml-auto flex h-11 w-11 items-center justify-center rounded-full border border-[#F5F1E8]/20 text-2xl text-[#F5F1E8]"
+        aria-label="Luk menu"
+      >
+        ×
+      </button>
+
+      <nav className="mt-16 flex flex-col gap-8 font-serif text-3xl text-[#F5F1E8]">
+        <button
+          type="button"
+          onClick={() => {
+            goToView("welcome");
+            setIsMobileMenuOpen(false);
+          }}
+          className="text-left"
+        >
+          Velkommen
+        </button>
+
+        <button
+          type="button"
+          onClick={() => {
+            goToView("praktisk");
+            setIsMobileMenuOpen(false);
+          }}
+          className="text-left"
+        >
+          Før dit besøg
+        </button>
+
+        <button
+          type="button"
+          onClick={() => {
+            goToView("findos");
+            setIsMobileMenuOpen(false);
+          }}
+          className="text-left"
+        >
+          Kontakt
+        </button>
+
+        <button
+          type="button"
+          onClick={() => {
+            goToView("events");
+            setIsMobileMenuOpen(false);
+          }}
+          className="text-left"
+        >
+          Events
+        </button>
+      </nav>
+    </div>
+  </div>
+)}
+{/* SIDER */}
       {/* SIDER */}
       {view === "home" ? (
         <HomePage
@@ -146,7 +227,7 @@ function HomePage({
       {/* USP-KORT ØVERST */}
     <div className="order-2 mx-auto grid w-full max-w-6xl gap-3 md:grid-cols-3">
         <FeatureCard
-         icon={<span className="text-2xl leading-none">♕</span>}
+         icon={<span className="text-3xl leading-none">♕</span>}
           title="+300 spil"
           text="Brætspil og kortspil til alle aldre og niveauer."
         />
