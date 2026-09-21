@@ -397,7 +397,7 @@ function FeatureCard({
 }
 function WelcomePage() {
   return (
-   <section className="relative z-10 flex min-h-screen items-start justify-center px-6 pb-5 pt-28 md:pt-32">
+   <section className="relative z-10 flex min-h-screen items-start justify-center px-6 pb-5 pt-36 md:pt-40">
       <div className="w-full max-w-5xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 py-7 shadow-2xl shadow-black/30 backdrop-blur-md md:px-14 md:py-8">
         <p className="mb-2 text-center text-xs uppercase tracking-[0.4em] text-[#9FB69F] md:text-sm">
           Velkommen
