@@ -659,9 +659,11 @@ function InformationRow({
 }
 
 function InfoPage({ label, title }: { label: string; title: string }) {
+  const isPractical = label === "Før dit besøg";
+
   return (
-    <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-8 pt-28 text-center md:pt-32">
-      <div className="max-w-4xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 py-8 shadow-2xl shadow-black/30 backdrop-blur-md md:px-12">
+    <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-8 pt-28 md:pt-32">
+      <div className="max-w-4xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 py-8 text-center shadow-2xl shadow-black/30 backdrop-blur-md">
         <p className="mb-3 text-sm uppercase tracking-[0.4em] text-[#7FA083]">
           {label}
         </p>
@@ -670,14 +672,14 @@ function InfoPage({ label, title }: { label: string; title: string }) {
           {title}
         </h1>
 
-        {label === "Før dit besøg" && (
-          <div className="mx-auto mt-5 max-w-3xl space-y-3 text-sm leading-6 text-[#D6D1C7] md:text-[15px] md:leading-6">
+        {isPractical && (
+          <div className="mx-auto mt-5 max-w-3xl space-y-3 text-left text-sm leading-6 text-[#D6D1C7] md:text-[15px] md:leading-7">
             <p className="font-medium text-[#F5F1E8]">
               Det skal være nemt at være gæst hos House of Brik.
             </p>
 
             <p>
-            Kom forbi og gå på opdagelse blandt vores bræt- og kortspil – fra de velkendte klassikere til nye favoritter.
+              Kom forbi og gå på opdagelse blandt vores bræt- og kortspil – fra de velkendte klassikere til nye favoritter.
             </p>
 
             <p>
@@ -696,7 +698,7 @@ function InfoPage({ label, title }: { label: string; title: string }) {
               Vi serverer selv kaffe, kolde drikke og snacks, og derfor er det ikke muligt at medbringe egen mad og drikke.
             </p>
 
-            <div className="pt-2">
+            <div className="pt-2 text-center">
               <p className="font-serif text-xl text-[#F5F1E8] md:text-2xl">
                 Mød op • Find et spil • Sæt jer ned
               </p>
