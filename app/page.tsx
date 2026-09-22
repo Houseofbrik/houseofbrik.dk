@@ -600,7 +600,7 @@ function FindUsPage() {
   rel="noopener noreferrer"
   className="mt-3 inline-block text-sm leading-6 text-[#D6D1C7] underline decoration-[#9FB69F]/50 underline-offset-4 transition hover:text-[#F5F1E8]"
 >
-  Se aktuelle parkeringsmuligheder og restriktioner i området.
+  Parkeringsinfo →
 </a>
           </div>
 
