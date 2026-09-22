@@ -498,8 +498,8 @@ function EventsPage() {
 
 function FindUsPage() {
   return (
-  <section className="relative z-10 min-h-screen px-5 pb-20 pt-36 sm:px-6 md:pt-40">
-     <div className="mx-auto mb-5 max-w-5xl text-center">
+ <section className="relative z-10 min-h-screen px-5 pb-4 pt-32 sm:px-6 md:pb-4 md:pt-36">
+     <div className="mx-auto mb-3 max-w-5xl text-center">
         <p className="mb-3 text-sm uppercase tracking-[0.4em] text-[#9FB69F]">
           Kontakt
         </p>
@@ -518,7 +518,7 @@ function FindUsPage() {
           href={GOOGLE_MAPS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative min-h-[280px] overflow-hidden border-b border-[#F5F1E8]/10 lg:min-h-[440px] lg:border-b-0 lg:border-r lg:border-[#F5F1E8]/10"
+          className="group relative min-h-[280px] overflow-hidden border-b border-[#F5F1E8]/10 lg:min-h-[360px] lg:border-b-0 lg:border-r lg:border-[#F5F1E8]/10"
           aria-label="Åbn House of Briks placering i Google Maps"
         >
           <img
@@ -548,7 +548,7 @@ function FindUsPage() {
           </div>
         </a>
 
-        <div className="flex flex-col justify-center p-7 sm:p-8">
+        <div className="flex flex-col justify-center px-6 py-4 sm:px-6 sm:py-4">
           <div>
             <h2 className="font-serif text-2xl text-[#F5F1E8]">
               House of Brik
@@ -561,7 +561,7 @@ function FindUsPage() {
             </p>
           </div>
 
-          <div className="my-6 h-px bg-[#F5F1E8]/10" />
+          <div className="my-4 h-px bg-[#F5F1E8]/10" />
 
           <div>
             <p className="text-xs uppercase tracking-[0.28em] text-[#9FB69F]">
@@ -574,7 +574,7 @@ function FindUsPage() {
             </div>
           </div>
 
-          <div className="my-6 h-px bg-[#F5F1E8]/10" />
+          <div className="my-4 h-px bg-[#F5F1E8]/10" />
 
           <div>
             <p className="text-xs uppercase tracking-[0.28em] text-[#9FB69F]">
@@ -594,9 +594,14 @@ function FindUsPage() {
               Kommer du i bil?
             </p>
 
-            <p className="mt-3 text-sm leading-6 text-[#D6D1C7]">
-              Se aktuelle parkeringsmuligheder og restriktioner i området.
-            </p>
+            <a
+  href="https://www.ltk.dk/borger/trafik-og-veje/parkering/parkeringsrestriktioner-og-randzoner"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-3 inline-block text-sm leading-6 text-[#D6D1C7] underline decoration-[#9FB69F]/50 underline-offset-4 transition hover:text-[#F5F1E8]"
+>
+  Se aktuelle parkeringsmuligheder og restriktioner i området.
+</a>
           </div>
 
           <a
