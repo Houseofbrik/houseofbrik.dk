@@ -498,29 +498,27 @@ function EventsPage() {
 
 function FindUsPage() {
   return (
-    <section className="relative z-10 min-h-screen px-5 pb-20 pt-28 sm:px-6 md:pt-32">
-      <div className="mx-auto mb-12 max-w-4xl text-center md:mb-16">
-        <p className="mb-5 text-sm uppercase tracking-[0.4em] text-[#9FB69F]">
+  <section className="relative z-10 min-h-screen px-5 pb-20 pt-36 sm:px-6 md:pt-40">
+     <div className="mx-auto mb-5 max-w-5xl text-center">
+        <p className="mb-3 text-sm uppercase tracking-[0.4em] text-[#9FB69F]">
           Kontakt
         </p>
 
-        <h1 className="font-serif text-4xl leading-tight text-[#F5F1E8] sm:text-5xl md:text-7xl">
-          Find vej til
-          <br />
-          House of Brik
+        <h1 className="font-serif text-4xl text-[#F5F1E8] md:text-4xl">
+          Her finder du os
         </h1>
 
-        <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-[#D6D1C7] sm:text-lg md:text-xl">
-          Midt i hjertet af Kongens Lyngby – få minutters gang fra stationen.
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-6 text-[#D6D1C7] md:text-[17px]">
+          Midt i Kongens Lyngby – få minutters gang fra stationen.
         </p>
       </div>
 
-      <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.35fr_0.65fr]">
+      <div className="mx-auto grid max-w-4xl overflow-hidden rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 shadow-2xl shadow-black/30 backdrop-blur-md lg:grid-cols-[1.1fr_0.9fr]">
         <a
           href={GOOGLE_MAPS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative min-h-[420px] overflow-hidden rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/75 shadow-2xl shadow-black/30 sm:min-h-[520px]"
+          className="group relative min-h-[280px] overflow-hidden border-b border-[#F5F1E8]/10 lg:min-h-[440px] lg:border-b-0 lg:border-r lg:border-[#F5F1E8]/10"
           aria-label="Åbn House of Briks placering i Google Maps"
         >
           <img
@@ -529,102 +527,87 @@ function FindUsPage() {
             className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.025]"
           />
 
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0D1E15]/55 via-transparent to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0D1F15]/65 via-transparent to-transparent" />
 
-          <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 rounded-2xl border border-white/10 bg-[#132A1E]/75 p-5 backdrop-blur-md sm:bottom-7 sm:left-7 sm:right-7 sm:p-6">
-            <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-[#A6BDA7]">
+          <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+            <div className="rounded-2xl border border-[#F5F1E8]/10 bg-[#14251C]/90 px-5 py-4 shadow-xl backdrop-blur-md">
+              <p className="text-xs uppercase tracking-[0.28em] text-[#9FB69F]">
                 House of Brik
               </p>
-
-              <p className="mt-2 font-serif text-2xl text-[#F5F1E8] sm:text-3xl">
+              <p className="mt-2 font-serif text-2xl text-[#F5F1E8]">
                 Likørstræde 3
               </p>
-
-              <p className="mt-1 text-sm text-[#D6D1C7] sm:text-base">
+              <p className="mt-1 text-sm text-[#D6D1C7]">
                 2800 Kongens Lyngby
               </p>
             </div>
 
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#F5F1E8] text-xl text-[#183226] shadow-lg transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#F5F1E8] text-xl text-[#14251C] shadow-lg">
               ↗
             </span>
           </div>
         </a>
 
-        <div className="rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/82 p-7 shadow-2xl shadow-black/30 backdrop-blur-md sm:p-9">
-          <div className="border-b border-white/10 pb-7">
-            <p className="text-xs uppercase tracking-[0.32em] text-[#9FB69F]">
-              Adresse
-            </p>
-
-            <h2 className="mt-4 font-serif text-3xl text-[#F5F1E8] sm:text-4xl">
+        <div className="flex flex-col justify-center p-7 sm:p-8">
+          <div>
+            <h2 className="font-serif text-2xl text-[#F5F1E8]">
               House of Brik
             </h2>
 
-            <p className="mt-4 text-lg leading-8 text-[#D6D1C7]">
+            <p className="mt-3 text-base leading-7 text-[#D6D1C7]">
               Likørstræde 3
               <br />
               2800 Kongens Lyngby
             </p>
           </div>
 
-          <div className="divide-y divide-white/10">
-            <InformationRow
-              icon="🚆"
-              title="Fra Lyngby Station"
-              text="Få minutters gang fra stationen."
-            />
+          <div className="my-6 h-px bg-[#F5F1E8]/10" />
 
-            <InformationRow
-              icon="🚗"
-              title="Parkering"
-              text="Der findes flere parkeringsmuligheder få minutters gang fra caféen."
-            />
+          <div>
+            <p className="text-xs uppercase tracking-[0.28em] text-[#9FB69F]">
+              Åbningstider
+            </p>
 
-            <InformationRow
-              icon="☕"
-              title="Midt i byen"
-              text="Perfekt placeret blandt caféer, restauranter og butikker."
-            />
+            <div className="mt-3 space-y-1 text-sm leading-6 text-[#D6D1C7]">
+              <p>Mandag–onsdag · 09.00–19.00</p>
+              <p>Torsdag–søndag · 09.00–21.00</p>
+            </div>
+          </div>
 
-            <InformationRow
-              icon="🕒"
-              title="Åbningstider"
-              text={
-                <>
-                  Mandag–onsdag: 09.00–19.00
-                  <br />
-                  Torsdag–søndag: 09.00–21.00
-                </>
-              }
-            />
+          <div className="my-6 h-px bg-[#F5F1E8]/10" />
+
+          <div>
+            <p className="text-xs uppercase tracking-[0.28em] text-[#9FB69F]">
+              Kontakt
+            </p>
+
+            <div className="mt-3 space-y-1 text-sm leading-6 text-[#D6D1C7]">
+              <p>info@houseofbrik.dk</p>
+              <p>Tlf.: Brik Brik</p>
+            </div>
+          </div>
+
+          <div className="my-6 h-px bg-[#F5F1E8]/10" />
+
+          <div>
+            <p className="text-xs uppercase tracking-[0.28em] text-[#9FB69F]">
+              Kommer du i bil?
+            </p>
+
+            <p className="mt-3 text-sm leading-6 text-[#D6D1C7]">
+              Se aktuelle parkeringsmuligheder og restriktioner i området.
+            </p>
           </div>
 
           <a
             href={GOOGLE_MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-[#F5F1E8] px-6 py-4 text-sm font-semibold text-[#183226] shadow-xl shadow-black/20 transition duration-300 hover:-translate-y-0.5 hover:bg-white"
+            className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-[#F5F1E8] px-6 py-3 text-sm font-semibold text-[#14251C] transition hover:bg-white"
           >
             Åbn i Google Maps
-            <span className="ml-2" aria-hidden="true">
-              ↗
-            </span>
           </a>
         </div>
-      </div>
-
-      <div className="mx-auto mt-8 max-w-7xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#294633]/70 px-7 py-10 text-center shadow-xl shadow-black/20 backdrop-blur-md sm:px-10 md:mt-10 md:py-14">
-        <p className="font-serif text-3xl leading-tight text-[#F5F1E8] sm:text-4xl">
-          Vi glæder os til at byde dig velkommen.
-        </p>
-
-        <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-[#D6D1C7] sm:text-lg">
-          Uanset om du kommer for et hurtigt spil, en kop kaffe eller en hel
-          aften med vennerne, glæder vi os til at skabe rammerne om en hyggelig
-          oplevelse.
-        </p>
       </div>
     </section>
   );
