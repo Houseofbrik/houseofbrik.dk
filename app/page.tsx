@@ -208,7 +208,7 @@ className="h-24 w-24 object-contain md:h-28 md:w-28"
  ) : (
         <InfoPage
           label="Før dit besøg"
-          title="De sidste brikker er ved at være på plads."
+          title="De sidste brikker er ved at være på plads..."
         />
       )}
     </main>
@@ -397,13 +397,12 @@ function FeatureCard({
 }
 function WelcomePage() {
   return (
-   <section className="relative z-10 flex min-h-screen items-start justify-center px-6 pb-5 pt-36 md:pt-40">
-      <div className="w-full max-w-5xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 py-7 shadow-2xl shadow-black/30 backdrop-blur-md md:px-14 md:py-8">
-        <p className="mb-2 text-center text-xs uppercase tracking-[0.4em] text-[#9FB69F] md:text-sm">
+<section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-5 pt-32 md:pt-36">
+<div className="w-full max-w-5xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 pt-8 pb-16 shadow-2xl shadow-black/30 backdrop-blur-md">        <p className="mb-2 text-center text-xs uppercase tracking-[0.4em] text-[#9FB69F] md:text-sm">
           Velkommen
         </p>
 
-        <h1 className="text-center font-serif text-4xl leading-tight text-[#F5F1E8] md:text-5xl">
+       <h1 className="text-center font-serif text-4xl text-[#F5F1E8] md:text-4xl">
           Det næste træk er dit…
         </h1>
 
@@ -662,39 +661,39 @@ function InfoPage({ label, title }: { label: string; title: string }) {
   const isPractical = label === "Før dit besøg";
 
   return (
-<section className="relative z-10 flex min-h-screen items-start justify-center px-6 pb-5 pt-28 md:pt-32">
-  <div className="max-w-4xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 pb-4 pt-8 text-center shadow-2xl shadow-black/30 backdrop-blur-md">
+<section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-5 pt-36 md:pt-40">
+  <div className="w-full max-w-5xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 pt-8 pb-16 text-center shadow-2xl shadow-black/30 backdrop-blur-md">
   <p className="mb-3 text-sm uppercase tracking-[0.4em] text-[#7FA083]">
     {label}
   </p>
-        <h1 className="font-serif text-4xl text-[#F5F1E8] md:text-4xl">
-          {title}
-        </h1>
+<h1 className="font-serif text-4xl text-[#F5F1E8] md:text-4xl">
+  {title}
+</h1>
 
-<div className="mx-auto mt-4 max-w-4xl space-y-3 text-left text-base leading-8 text-[#D6D1C7] sm:text-lg">
-<p>
+<div className="mx-auto mt-4 max-w-4xl space-y-3 text-left text-base leading-6 text-[#D6D1C7] md:text-[17px] md:leading-7"></div><div className="mx-auto mt-4 max-w-4xl space-y-3 text-left text-base leading-8 text-[#D6D1C7] sm:text-lg">
+<p className="text-lg font-medium leading-7 text-[#F5F1E8]">
   Det skal være nemt at være gæst hos House of Brik.
 </p>
 
-            <p>
-              Kom forbi og gå på opdagelse blandt vores bræt- og kortspil – fra de velkendte klassikere til nye favoritter.
-            </p>
+<p>
+  Kom forbi og gå på opdagelse blandt vores bræt- og kortspil – fra de velkendte klassikere til nye favoritter.
+</p>
 
-            <p>
-              Hos os køber I tid ved bordet, og mens tiden er jeres, kan I spille lige så meget, I har lyst til. Find et spil, skift undervejs eller prøv noget helt nyt.
-            </p>
+<p>
+  Find et spil, sæt jer ned, slap af og bliv hængende. Skift spil undervejs, eller prøv noget helt nyt.
+</p>
 
-            <p>
-              Bestil en god kop kaffe, noget koldt at drikke eller en snack, og bliv hængende så længe det passer jer.
-            </p>
+<p>
+  Bestil en god kop kaffe, noget koldt at drikke eller en snack undervejs.
+</p>
 
-            <p>
-              Du behøver ikke være garvet brætspiller. Kom med vennerne, familien, kollegaerne eller din date. Her er plads til både dem, der kender reglerne udenad, og dem, der bare har lyst til at være med.
-            </p>
+<p>
+  Du behøver ikke være garvet brætspiller. Kom med vennerne, familien, kollegaerne eller din date. Her er plads til både dem, der kender reglerne udenad, og dem, der bare har lyst til at være med.
+</p>
 
-            <p>
-              Vi serverer selv kaffe, kolde drikke og snacks, og derfor er det ikke muligt at medbringe egen mad og drikke.
-            </p>
+<p>
+  Vi serverer selv kaffe, kolde drikke og snacks, og derfor er det ikke muligt at medbringe egen mad og drikke.
+</p>
 
             <div className="pt-2 text-center">
               <p className="font-serif text-xl text-[#F5F1E8] md:text-2xl">
