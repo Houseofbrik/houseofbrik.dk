@@ -454,42 +454,41 @@ function WelcomePage() {
 function EventsPage() {
   return (
     <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-16 pt-32 md:pt-36">
-      <div className="max-w-4xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 py-12 shadow-2xl shadow-black/30 backdrop-blur-md md:px-16 md:py-16">
+   <div className="max-w-5xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 py-14 shadow-2xl shadow-black/30 backdrop-blur-md md:px-16 md:py-16">
         <p className="mb-5 text-sm uppercase tracking-[0.4em] text-[#9FB69F]">
-          Events
-        </p>
-
-        <h1 className="mb-8 font-serif text-4xl text-[#F5F1E8] md:text-6xl">
+  Events
+</p>
+        <h1 className="mb-5 font-serif text-4xl text-[#F5F1E8] md:text-4xl">
           Events hos House of Brik
         </h1>
 
-        <div className="space-y-6 text-base leading-8 text-[#D6D1C7] md:text-lg md:leading-9">
-          <p>
-            Leder du efter de perfekte rammer til din næste begivenhed? Hos
-            House of Brik skaber vi unikke og inspirerende omgivelser til
-            receptioner, bogudgivelser, netværksarrangementer,
-            produktlanceringer, virksomhedsevents og andre særlige anledninger.
-          </p>
+        <div className="space-y-4 text-base leading-6 text-[#D6D1C7] md:text-[17px]">
+  <p>
 
-          <p>
-            Med vores karakterfulde atmosfære og fleksible lokaler får dit
-            arrangement de bedste forudsætninger for at gøre et varigt indtryk
-            på dine gæster. Uanset om du planlægger en intim sammenkomst eller
-            et større event, hjælper vi gerne med at skabe en oplevelse, der
-            bliver husket.
-          </p>
+  Leder du efter de perfekte rammer til din næste begivenhed? Hos
+  House of Brik skaber vi hyggelige og stemningsfulde omgivelser til
+  receptioner, bogudgivelser, netværksarrangementer,
+  produktlanceringer, virksomhedsevents og andre særlige anledninger.
+</p>
 
-          <p>
-            Kontakt os for at høre mere om mulighederne eller få et
-            uforpligtende tilbud på:
-          </p>
+<p>
+  Med vores særlige atmosfære og fleksible lokaler er der plads til
+  både den intime sammenkomst og det større arrangement. Vi hjælper
+  gerne med at skabe de rette rammer, så I kan koncentrere jer om det
+  vigtigste – at være sammen og få en god oplevelse.
+</p>
 
-          <a
-            href="mailto:info@houseofbrik.dk"
-            className="inline-block font-semibold text-[#F4E1CA] underline decoration-[#F4E1CA]/40 underline-offset-4 transition hover:text-white"
-          >
-            info@houseofbrik.dk
-          </a>
+<p>
+  Kontakt os for at høre mere om mulighederne eller få et
+  uforpligtende tilbud på:
+</p>
+
+<a
+  href="mailto:info@houseofbrik.dk"
+  className="inline-block font-semibold text-[#F4E1CA] underline decoration-[#F4E1CA]/40 underline-offset-4"
+>
+  info@houseofbrik.dk
+</a>
         </div>
       </div>
     </section>
