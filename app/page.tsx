@@ -2,7 +2,7 @@
 
 import { useState, type ReactNode } from "react";
 
-type View = "home" | "welcome" | "events" | "findos" | "praktisk" | "booking";
+type View = "home" | "welcome" | "events" | "findos" | "praktisk" | "booking" | "menu";
 
 const GOOGLE_MAPS_URL =
   "https://www.google.com/maps?q=55.769296185603004,12.504498671447118";
@@ -89,7 +89,13 @@ className="h-24 w-24 object-contain md:h-28 md:w-28"
               >
                 Før dit besøg
               </button>
-
+<button
+  onClick={() => goToView("menu")}
+  className="transition hover:text-white"
+  type="button"
+>
+  Menu
+</button>
               <button
                 onClick={() => goToView("findos")}
                 className="transition hover:text-white"
@@ -199,6 +205,8 @@ className="h-24 w-24 object-contain md:h-28 md:w-28"
         />
       ) : view === "welcome" ? (
   <WelcomePage />
+) : view === "menu" ? (
+<MenuPage />
 ) : view === "events" ? (
   <EventsPage />
       ) : view === "findos" ? (
@@ -451,7 +459,23 @@ function WelcomePage() {
   );
 }
 
-function EventsPage() {
+
+
+function MenuPage() {
+  return (
+    <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-5 pt-36 md:pt-40">
+      <div className="w-full max-w-5xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 py-16 text-center shadow-2xl shadow-black/30 backdrop-blur-md">
+        <p className="mb-3 text-sm uppercase tracking-[0.4em] text-[#7FA083]">
+          Menu
+        </p>
+
+        <h1 className="font-serif text-4xl text-[#F5F1E8] md:text-4xl">
+          Kommer snarest…
+        </h1>
+      </div>
+    </section>
+  );
+}function EventsPage() {
   return (
     <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-16 pt-32 md:pt-36">
    <div className="max-w-5xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 py-14 shadow-2xl shadow-black/30 backdrop-blur-md md:px-16 md:py-16">
