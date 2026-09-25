@@ -687,15 +687,15 @@ function InfoPage({ label, title }: { label: string; title: string }) {
 </p>
 
 <p>
-  Kom forbi og gå på opdagelse blandt vores bræt- og kortspil – fra de velkendte klassikere til nye favoritter.
+  Gå på opdagelse i vores brætspilsbibliotek – fyldt med velkendte klassikere, moderne favoritter og spil, du måske ikke har mødt endnu.
 </p>
 
 <p>
-  Find et spil, sæt jer ned, slap af og bliv hængende. Skift spil undervejs, eller prøv noget helt nyt.
+  Biblioteket vokser hele tiden, og vi tilføjer løbende nye spil, så der altid er noget nyt at opdage.
 </p>
 
 <p>
-  Bestil en god kop kaffe, noget koldt at drikke eller en snack undervejs.
+  I kan skifte spil undervejs og prøve lige så mange, I har lyst til.
 </p>
 
 <p>
