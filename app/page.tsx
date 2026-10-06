@@ -111,6 +111,14 @@ className="h-24 w-24 object-contain md:h-28 md:w-28"
               >
                 Events
 </button>
+<a
+  href="https://www.findsmiley.dk/app/1600106"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="transition hover:text-white"
+>
+  Kontrolrapporter
+</a>
 </nav>
 {/* MOBIL MENU-KNAP */}
 <button
