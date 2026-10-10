@@ -352,13 +352,19 @@ function HomePage({
       </div>
 
       {/* KOMPAKT HERO */}
-      <div className="order-1 mx-auto flex min-h-[calc(100svh-340px)] max-w-6xl flex-col items-center justify-center py-3 md:min-h-[calc(100svh-330px)] md:py-3">
-        <p className="mb-3 text-[10px] uppercase tracking-[0.42em] text-[#A7BCA8] sm:text-xs">
+<div className="relative order-1 mx-auto flex min-h-[calc(100svh-340px)] max-w-6xl flex-col items-center justify-center py-3 md:min-h-[calc(100svh-330px)] md:py-3">        <p className="mb-3 text-[10px] uppercase tracking-[0.42em] text-[#A7BCA8] sm:text-xs">
+<div className="mb-6 w-fit max-w-[220px] -rotate-4 rounded-[1.5rem] bg-[#F5F1E8] px-5 py-4 text-center shadow-xl shadow-black/20 md:absolute md:-left-[25%] md:top-[10%] md:mb-0 md:text-left">
+  <p className="text-[9px] uppercase tracking-[0.3em] text-[#55705C] sm:text-[10px]">
+    Vi åbner snart
+  </p>
+  <p className="mt-2 font-serif text-lg leading-snug text-[#294633] md:text-xl">
+    Brikkerne er ved at falde på plads...
+  </p>
+</div>
           Spil • Smil • Sjov
         </p>
 
-        <h1 className="font-serif text-4xl leading-[1.02] tracking-tight sm:text-5xl md:text-6xl lg:text-[4.25rem]">
-          Mere nærvær,
+<h1 className="font-serif text-3xl leading-[1.08] tracking-tight sm:text-5xl md:text-6xl lg:text-[4.25rem]">          Mere nærvær,
           <br />
           Mindre skærm,
           <br />
