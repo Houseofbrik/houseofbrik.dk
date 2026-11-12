@@ -387,7 +387,7 @@ function HomePage({
           </span>
 
           <span className="block text-[#D6D1C7]/80">
-            Man–ons 10–19 · Tor–søn 09–21
+            Man–ons 10–20 · Tor–søn 09–21
           </span>
         </button>
       </div>
