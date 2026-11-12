@@ -224,7 +224,7 @@ className="h-24 w-24 object-contain md:h-28 md:w-28"
  ) : (
         <InfoPage
           label="Før dit besøg"
-          title="De sidste brikker er ved at være på plads..."
+          title="Alt er klar til dit næste træk..."
         />
       )}
     </main>
