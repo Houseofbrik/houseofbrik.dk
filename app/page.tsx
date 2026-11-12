@@ -354,12 +354,12 @@ function HomePage({
       {/* KOMPAKT HERO */}
 <div className="relative order-1 mx-auto flex min-h-[calc(100svh-340px)] max-w-6xl flex-col items-center justify-center py-3 md:min-h-[calc(100svh-330px)] md:py-3">        <p className="mb-3 text-[10px] uppercase tracking-[0.42em] text-[#A7BCA8] sm:text-xs">
 <div className="mb-6 w-fit max-w-[220px] -rotate-4 rounded-[1.5rem] bg-[#F5F1E8] px-5 py-4 text-center shadow-xl shadow-black/20 md:absolute md:-left-[25%] md:top-[10%] md:mb-0 md:text-left">
-  <p className="text-[9px] uppercase tracking-[0.3em] text-[#55705C] sm:text-[10px]">
-    Vi åbner snart
-  </p>
-  <p className="mt-2 font-serif text-lg leading-snug text-[#294633] md:text-xl">
-    Brikkerne er ved at falde på plads...
-  </p>
+<p className="font-serif text-lg leading-snug text-[#294633] md:text-xl">
+  Brikkerne er på plads
+</p>
+<p className="mt-2 whitespace-nowrap text-[18px] uppercase tracking-[0.05em] text-[#55705C] sm:text-[20px]">
+  Vi åbner d. 13/11
+</p>
 </div>
           Spil • Smil • Sjov
         </p>
@@ -387,7 +387,7 @@ function HomePage({
           </span>
 
           <span className="block text-[#D6D1C7]/80">
-            Man–ons 09–19 · Tor–søn 09–21
+            Man–ons 10–19 · Tor–søn 09–21
           </span>
         </button>
       </div>
@@ -606,7 +606,7 @@ function FindUsPage() {
             </p>
 
             <div className="mt-3 space-y-1 text-sm leading-6 text-[#D6D1C7]">
-              <p>Mandag–onsdag · 09.00–19.00</p>
+              <p>Mandag–onsdag · 10.00–20.00</p>
               <p>Torsdag–søndag · 09.00–21.00</p>
             </div>
           </div>
