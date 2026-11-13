@@ -354,11 +354,8 @@ function HomePage({
       {/* KOMPAKT HERO */}
 <div className="relative order-1 mx-auto flex min-h-[calc(100svh-340px)] max-w-6xl flex-col items-center justify-center py-3 md:min-h-[calc(100svh-330px)] md:py-3">
 <div className="mb-6 w-fit max-w-[220px] -rotate-4 rounded-[1.5rem] bg-[#F5F1E8] px-5 py-4 text-center shadow-xl shadow-black/20 md:absolute md:-left-[25%] md:top-[10%] md:mb-0 md:text-left">
-<p className="font-serif text-lg leading-snug text-[#294633] md:text-xl">
-  Brikkerne er på plads
-</p>
-<p className="mt-2 whitespace-nowrap text-[18px] uppercase tracking-[0.05em] text-[#55705C] sm:text-[20px]">
-  Vi åbner d. 13/11
+<p className="whitespace-nowrap text-center font-serif text-2xl leading-snug text-[#294633] md:text-3xl">
+  Vi har åbent
 </p>
 </div>
   <p className="mb-3 text-[10px] uppercase tracking-[0.42em] text-[#A7BCA8] sm:text-xs">
