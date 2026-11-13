@@ -475,18 +475,36 @@ function WelcomePage() {
 
 function MenuPage() {
   return (
-    <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-5 pt-36 md:pt-40">
-      <div className="w-full max-w-5xl rounded-[2rem] border border-[#F5F1E8]/10 bg-[#14251C]/80 px-8 py-16 text-center shadow-2xl shadow-black/30 backdrop-blur-md">
-        <p className="mb-3 text-sm uppercase tracking-[0.4em] text-[#7FA083]">
+    <section className="relative z-10 flex min-h-screen flex-col items-center px-5 pb-16 pt-36 md:pt-40">
+      <div className="mx-auto w-full max-w-6xl text-center">
+
+        <p className="mb-3 text-sm uppercase tracking-[0.4em] text-[#9FB69F]">
           Menu
         </p>
 
-        <h1 className="font-serif text-4xl text-[#F5F1E8] md:text-4xl">
-          Kommer snarest…
-        </h1>
+
+        <a
+          href="/HOB%20Menukort.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block overflow-hidden rounded-[1.5rem] shadow-2xl shadow-black/30"
+          aria-label="Åbn House of Briks menukort i fuld størrelse"
+        >
+          <img
+            src="/HOB%20Menukort.png"
+            alt="House of Brik menukort med drikkevarer, mad, kager og priser"
+            className="h-auto w-full"
+          />
+        </a>
+
+        <p className="mt-5 text-sm text-[#D6D1C7]">
+          Tryk på menukortet for at se det i fuld størrelse
+        </p>
+
       </div>
     </section>
   );
+
 }function EventsPage() {
   return (
     <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pb-16 pt-32 md:pt-36">
