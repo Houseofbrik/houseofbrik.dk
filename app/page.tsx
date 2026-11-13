@@ -618,7 +618,7 @@ function FindUsPage() {
 
             <div className="mt-3 space-y-1 text-sm leading-6 text-[#D6D1C7]">
               <p>info@houseofbrik.dk</p>
-              <p>Tlf.: Brik Brik</p>
+             <p>Tlf.: <a href="tel:+4551492800" className="hover:underline">51 49 28 00</a></p>
             </div>
           </div>
 
