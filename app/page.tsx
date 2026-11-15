@@ -370,7 +370,7 @@ function HomePage({
         </h1>
 
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-[#D6D1C7] sm:text-base sm:leading-7 md:text-lg">
-          En varm og afslappet boardgame lounge midt i Kongens Lyngby – skabt
+En varm og afslappet brætspilscafé midt i Kongens Lyngby – skabt
           til gode spil, kaffe og tid sammen.
         </p>
 
