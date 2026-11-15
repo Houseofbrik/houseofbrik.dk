@@ -491,10 +491,10 @@ function MenuPage() {
           aria-label="Åbn House of Briks menukort i fuld størrelse"
         >
           <img
-            src="/HOB%20Menukort.png"
-            alt="House of Brik menukort med drikkevarer, mad, kager og priser"
-            className="h-auto w-full"
-          />
+  src="/HOB%20Menukort.png"
+  alt="House of Brik menukort med drikkevarer, mad, kager og priser"
+  className="mx-auto h-auto max-h-[calc(100svh-300px)] w-auto max-w-full object-contain"
+/>
         </a>
 
         <p className="mt-5 text-sm text-[#D6D1C7]">
