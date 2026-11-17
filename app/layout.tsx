@@ -15,7 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "House of Brik | Brætspilscafé & Café i Kongens Lyngby",
-description: "House of Brik er en hyggelig brætspilscafé i Kongens Lyngby. Find et spil, nyd kaffe og snacks, og bliv hængende med venner eller familie.",  icons: {
+  description: "House of Brik er en hyggelig brætspilscafé i Kongens Lyngby. Gå på opdagelse i vores brætspil, og nyd kaffe, snacks og nærvær med venner og familie.",
+  icons: {
     icon: "/favicon.ico",
   },
 };
