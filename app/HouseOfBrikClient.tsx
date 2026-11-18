@@ -185,7 +185,16 @@ className="h-24 w-24 object-contain md:h-28 md:w-28"
         >
           Før dit besøg
         </button>
-
+<button
+  type="button"
+  onClick={() => {
+    goToView("menu");
+    setIsMobileMenuOpen(false);
+  }}
+  className="text-left"
+>
+  Menukort
+</button>
         <button
           type="button"
           onClick={() => {
