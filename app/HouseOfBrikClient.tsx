@@ -395,6 +395,14 @@ En varm og afslappet brætspilscafé midt i Kongens Lyngby – skabt
             Man–ons 10–20 · Tor–søn 09–21
           </span>
         </button>
+        <div className="mt-5 md:hidden">
+  <a
+    href="/foer-dit-besoeg"
+    className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#F5F1E8] px-7 py-3 text-sm font-medium text-[#294633] shadow-sm transition-colors hover:bg-white"
+  >
+    Planlæg dit besøg
+  </a>
+</div>
       </div>
     </section>
   );
