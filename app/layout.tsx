@@ -41,9 +41,26 @@ export default function RootLayout({
               "@type": "CafeOrCoffeeShop",
               name: "House of Brik",
               url: "https://www.houseofbrik.dk",
+              amenityFeature: [
+  {
+    "@type": "LocationFeatureSpecification",
+    name: "Brætspil og kortspil",
+    value: true,
+  },
+  {
+    "@type": "LocationFeatureSpecification",
+    name: "Sociale spiloplevelser for venner, par og familier",
+    value: true,
+  },
+  {
+    "@type": "LocationFeatureSpecification",
+    name: "Indendørs aktiviteter",
+    value: true,
+  },
+],
               description:
-                "House of Brik er en moderne café og brætspilscafé (board game café) i Kongens Lyngby. Et hyggeligt samlingssted med brætspil, kaffe, snacks og gode oplevelser.",
-              address: {
+                "House of Brik er en moderne brætspilscafé og social café i Kongens Lyngby. Her mødes venner, par og familier om brætspil, kortspil, kaffe og hyggelige oplevelser. Et oplagt sted til en date, en hyggelig eftermiddag med familien eller en sjov aften med vennerne. House of Brik tilbyder indendørs aktiviteter og socialt samvær i afslappede, hyggelige omgivelser tæt på København.",
+                address: {
                 "@type": "PostalAddress",
                 streetAddress: "Likørstræde 3",
                 postalCode: "2800",
