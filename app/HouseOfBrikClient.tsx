@@ -79,45 +79,40 @@ className="h-24 w-24 object-contain md:h-28 md:w-28"
 
             {/* NAVIGATION */}
             <nav className="hidden items-center gap-8 text-sm text-[#F5F1E8]/80 md:flex">
-              <button
-                onClick={() => goToView("welcome")}
-                className="transition hover:text-white"
-                type="button"
-              >
-                Velkommen
-              </button>
+<a
+  href="/velkommen"
+  className="transition hover:text-white"
+>
+  Velkommen
+</a>
 
               
 
-              <button
-                onClick={() => goToView("praktisk")}
-                className="transition hover:text-white"
-                type="button"
-              >
-                Før dit besøg
-              </button>
-<button
-  onClick={() => goToView("menu")}
+<a
+  href="/foer-dit-besoeg"
   className="transition hover:text-white"
-  type="button"
+>
+  Før dit besøg
+</a>
+<a
+  href="/menu"
+  className="transition hover:text-white"
 >
   Menu
-</button>
-              <button
-                onClick={() => goToView("findos")}
-                className="transition hover:text-white"
-                type="button"
-              >
-                Kontakt
-              </button>
+</a>
+<a
+  href="/kontakt"
+  className="transition hover:text-white"
+>
+  Kontakt
+</a>
 
-              <button
-                onClick={() => goToView("events")}
-                className="transition hover:text-white"
-                type="button"
-              >
-                Events
-</button>
+<a
+  href="/events"
+  className="transition hover:text-white"
+>
+  Events
+</a>
 <a
   href="https://www.findsmiley.dk/app/1600106"
   target="_blank"
@@ -164,59 +159,44 @@ className="h-24 w-24 object-contain md:h-28 md:w-28"
       </button>
 
       <nav className="mt-16 flex flex-col gap-8 font-serif text-3xl text-[#F5F1E8]">
-        <button
-          type="button"
-          onClick={() => {
-            goToView("welcome");
-            setIsMobileMenuOpen(false);
-          }}
-          className="text-left"
-        >
-          Velkommen
-        </button>
-
-        <button
-          type="button"
-          onClick={() => {
-            goToView("praktisk");
-            setIsMobileMenuOpen(false);
-          }}
-          className="text-left"
-        >
-          Før dit besøg
-        </button>
-<button
-  type="button"
-  onClick={() => {
-    goToView("menu");
-    setIsMobileMenuOpen(false);
-  }}
+ <a
+  href="/velkommen"
   className="text-left"
+  onClick={() => setIsMobileMenuOpen(false)}
+>
+  Velkommen
+</a>
+
+<a
+  href="/foer-dit-besoeg"
+  className="text-left"
+  onClick={() => setIsMobileMenuOpen(false)}
+>
+  Før dit besøg
+</a>
+<a
+  href="/menu"
+  className="text-left"
+  onClick={() => setIsMobileMenuOpen(false)}
 >
   Menukort
-</button>
-        <button
-          type="button"
-          onClick={() => {
-            goToView("findos");
-            setIsMobileMenuOpen(false);
-          }}
-          className="text-left"
-        >
-          Kontakt
-        </button>
+</a>
+<a
+  href="/kontakt"
+  className="text-left"
+  onClick={() => setIsMobileMenuOpen(false)}
+>
+  Kontakt
+</a>
 
-        <button
-          type="button"
-          onClick={() => {
-            goToView("events");
-            setIsMobileMenuOpen(false);
-          }}
-          className="text-left"
-        >
-          Events
-        </button>
-      </nav>
+<a
+  href="/events"
+  className="text-left"
+  onClick={() => setIsMobileMenuOpen(false)}
+>
+  Events
+</a>
+</nav>
     </div>
   </div>
 )}
