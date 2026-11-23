@@ -39,8 +39,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "CafeOrCoffeeShop",
-              name: "House of Brik",
-              url: "https://www.houseofbrik.dk",
+name: "House of Brik",
+alternateName: "House of Brick",
+url: "https://www.houseofbrik.dk",
               amenityFeature: [
   {
     "@type": "LocationFeatureSpecification",
