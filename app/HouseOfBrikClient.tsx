@@ -396,7 +396,7 @@ En varm og afslappet brætspilscafé midt i Kongens Lyngby – skabt
           </span>
 
           <span className="block text-[#D6D1C7]/80">
-            Man–ons 10–20 · Tor–søn 09–21
+Man–Tor 10–20 · Fre–Lør 10–21 · Søn 10–20
           </span>
         </button>
  <div className="mt-5 flex flex-wrap items-center justify-center gap-3 md:hidden">
@@ -649,8 +649,9 @@ function FindUsPage() {
             </p>
 
             <div className="mt-3 space-y-1 text-sm leading-6 text-[#D6D1C7]">
-              <p>Mandag–onsdag · 10.00–20.00</p>
-              <p>Torsdag–søndag · 09.00–21.00</p>
+<p>Mandag–torsdag · 10.00–20.00</p>
+<p>Fredag–lørdag · 10.00–21.00</p>
+<p>Søndag · 10.00–20.00</p>
             </div>
           </div>
 
